@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chhatrapati Shivaji Maharaj — The Lion of Maharashtra</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --saffron-light: #FF9500;
+    --saffron-glow: #FFB347;
+    --gold: #D4A017;
+    --gold-light: #F5C842;
+    --maroon: #6B0F1A;
+    --deep-maroon: #3D0008;
+    --dark: #0D0500;
+    --dark2: #1A0A00;
+    --dark3: #2A1000;
+    --cream: #F5E6C8;
+    --cream-light: #FFF5E0;
+    --text-muted: #C4A882;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'Crimson Text', serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    width: 20px; height: 20px;
+    border: 2px solid var(--saffron);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: all 0.1s ease;
+  }
+  .cursor-dot {
+    width: 6px; height: 6px;
+    background: var(--saffron);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark2); }
+  ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: linear-gradient(180deg, rgba(13,5,0,0.98) 0%, rgba(13,5,0,0) 100%);
+    padding: 18px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(212,160,23,0.15);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    color: var(--cream); text-decoration: none;
+    font-family: 'Cinzel', serif; font-size: 0.75rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    transition: color 0.3s;
+    cursor: none;
+  }
+  .nav-links a:hover { color: var(--saffron-glow); }
+
+  /* HERO */
+  #hero {
+    height: 100vh; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center bottom, #3D1000 0%, #1A0500 40%, #0D0200 100%);
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(212,160,23,0.03) 40px, rgba(212,160,23,0.03) 41px),
+      repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(212,160,23,0.03) 40px, rgba(212,160,23,0.03) 41px);
+  }
+
+  .hero-rays {
+    position: absolute; inset: 0;
+    background: conic-gradient(from 180deg at 50% 85%, transparent 0deg, rgba(255,107,0,0.06) 20deg, transparent 40deg, rgba(255,149,0,0.04) 60deg, transparent 80deg, rgba(255,107,0,0.06) 100deg, transparent 120deg, rgba(255,149,0,0.04) 140deg, transparent 160deg, rgba(255,107,0,0.06) 180deg, transparent 200deg, rgba(255,149,0,0.04) 220deg, transparent 240deg, rgba(255,107,0,0.06) 260deg, transparent 280deg, rgba(255,149,0,0.04) 300deg, transparent 320deg, rgba(255,107,0,0.06) 340deg, transparent 360deg);
+    animation: rotateRays 60s linear infinite;
+  }
+  @keyframes rotateRays { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .hero-glow {
+    position: absolute; bottom: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(255,107,0,0.18) 0%, transparent 70%);
+    pointer-events: none;
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  }
+
+  .hero-content {
+    text-align: center; position: relative; z-index: 2;
+    animation: heroFadeIn 2s ease forwards;
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-subtitle-top {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem; letter-spacing: 8px;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeSlideUp 1.5s ease 0.3s both;
+  }
+
+  .hero-emblem {
+    font-size: 5rem; margin-bottom: 20px;
+    animation: fadeSlideUp 1.5s ease 0.5s both;
+    filter: drop-shadow(0 0 30px rgba(255,107,0,0.6));
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 1.1;
+    background: linear-gradient(135deg, #FFD700 0%, #FF9500 40%, #FFD700 70%, #F5C842 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-bottom: 10px;
+    animation: fadeSlideUp 1.5s ease 0.7s both;
+    filter: drop-shadow(0 4px 20px rgba(255,149,0,0.3));
+  }
+
+  .hero-title-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: var(--saffron-glow);
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    animation: fadeSlideUp 1.5s ease 0.9s both;
+  }
+
+  .hero-dates {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem; letter-spacing: 4px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    animation: fadeSlideUp 1.5s ease 1.1s both;
+  }
+
+  .hero-tagline {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem; font-style: italic;
+    color: var(--cream-light); max-width: 600px; margin: 0 auto 50px;
+    line-height: 1.6;
+    animation: fadeSlideUp 1.5s ease 1.3s both;
+  }
+
+  .hero-cta {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    animation: fadeSlideUp 1.5s ease 1.5s both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--saffron), var(--saffron-light));
+    color: white; border: none; padding: 14px 36px;
+    font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; cursor: none; text-decoration: none;
+    display: inline-block;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,107,0,0.6); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 14px 36px;
+    font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; cursor: none; text-decoration: none;
+    display: inline-block;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover { background: rgba(212,160,23,0.1); transform: translateY(-3px); }
+
+  .scroll-indicator {
+    position: absolute; bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s ease-in-out infinite;
+    color: var(--gold); font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 3px; text-align: center;
+  }
+  .scroll-indicator::after {
+    content: '↓'; display: block; font-size: 1.5rem; margin-top: 5px;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 100px 0; }
+
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  .section-header { text-align: center; margin-bottom: 70px; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem; letter-spacing: 6px; text-transform: uppercase;
+    color: var(--saffron); margin-bottom: 15px; display: block;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; line-height: 1.2; margin-bottom: 20px;
+  }
+
+  .section-divider {
+    width: 120px; height: 2px; margin: 20px auto;
+    background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+  }
+
+  .section-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem; font-style: italic;
+    color: var(--text-muted); max-width: 600px; margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0; transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0; transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* EARLY LIFE */
+  #early-life {
+    background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 50%, var(--dark) 100%);
+    position: relative;
+  }
+  #early-life::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .early-life-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+
+  .early-life-image-wrap {
+    position: relative;
+  }
+  .early-life-image-wrap::before {
+    content: '';
+    position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px;
+    border: 2px solid var(--gold); opacity: 0.3; z-index: 0;
+  }
+  .early-life-image-wrap::after {
+    content: '';
+    position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px;
+    border: 2px solid var(--saffron); opacity: 0.2; z-index: 0;
+  }
+  .early-life-img {
+    width: 100%; height: 450px; object-fit: cover;
+    position: relative; z-index: 1;
+    filter: sepia(20%) contrast(1.1);
+  }
+
+  .info-card {
+    background: linear-gradient(135deg, rgba(42,16,0,0.8), rgba(26,10,0,0.8));
+    border: 1px solid rgba(212,160,23,0.2);
+    padding: 30px; margin-bottom: 20px;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  }
+  .info-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--saffron), var(--gold));
+  }
+
+  .info-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold); font-size: 0.85rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .info-card p {
+    font-size: 1.1rem; line-height: 1.6; color: var(--cream);
+  }
+
+  .birth-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;
+  }
+
+  .stat-box {
+    background: rgba(255,107,0,0.08);
+    border: 1px solid rgba(255,107,0,0.2);
+    padding: 20px; text-align: center;
+  }
+  .stat-box .val {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.6rem; color: var(--saffron); display: block;
+  }
+  .stat-box .lbl {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* TIMELINE */
+  #timeline {
+    background: var(--dark2);
+    position: relative;
+    overflow: hidden;
+  }
+  #timeline::after {
+    content: 'JAY SHIVAJI';
+    position: absolute; right: -60px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8rem; color: rgba(212,160,23,0.02);
+    white-space: nowrap; pointer-events: none;
+  }
+
+  .timeline-line {
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--saffron) 10%, var(--gold) 50%, var(--saffron) 90%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .timeline-items { position: relative; }
+
+  .timeline-item {
+    display: grid; grid-template-columns: 1fr 60px 1fr;
+    gap: 0; margin-bottom: 60px; align-items: center;
+  }
+
+  .timeline-content-left { text-align: right; padding-right: 40px; }
+  .timeline-content-right { text-align: left; padding-left: 40px; }
+  .timeline-empty { }
+
+  .timeline-node {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--dark);
+    border: 3px solid var(--saffron);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; position: relative; z-index: 2;
+    box-shadow: 0 0 20px rgba(255,107,0,0.4);
+    transition: all 0.3s;
+  }
+  .timeline-node:hover {
+    box-shadow: 0 0 40px rgba(255,107,0,0.8);
+    transform: scale(1.15);
+  }
+
+  .timeline-year {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem; color: var(--saffron);
+    margin-bottom: 5px;
+  }
+  .timeline-event-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; color: var(--gold);
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .timeline-event-desc {
+    font-size: 0.95rem; color: var(--text-muted);
+    line-height: 1.6; max-width: 350px;
+  }
+  .timeline-content-left .timeline-event-desc { margin-left: auto; }
+
+  /* BATTLES SECTION */
+  #battles {
+    background: linear-gradient(180deg, var(--dark) 0%, #150800 50%, var(--dark) 100%);
+    position: relative;
+  }
+
+  .battles-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .battle-card {
+    background: linear-gradient(135deg, rgba(30,10,0,0.9), rgba(50,20,0,0.7));
+    border: 1px solid rgba(212,160,23,0.15);
+    overflow: hidden; position: relative;
+    cursor: none;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .battle-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--maroon), var(--saffron), var(--gold));
+  }
+  .battle-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,107,0,0.4);
+    box-shadow: 0 20px 40px rgba(255,107,0,0.15);
+  }
+  .battle-card:hover .battle-bg { transform: scale(1.05); }
+
+  .battle-img-wrap {
+    height: 200px; overflow: hidden; position: relative;
+  }
+  .battle-bg {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: sepia(30%) contrast(1.2) brightness(0.8);
+  }
+  .battle-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(13,5,0,0.95) 100%);
+  }
+  .battle-year-badge {
+    position: absolute; top: 15px; right: 15px;
+    background: var(--saffron);
+    color: white;
+    font-family: 'Cinzel', serif; font-size: 0.75rem;
+    padding: 5px 12px; letter-spacing: 1px;
+    clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+  }
+
+  .battle-content { padding: 25px; }
+
+  .battle-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem; color: var(--gold);
+    margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .battle-meta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 2px;
+    color: var(--saffron); text-transform: uppercase;
+    margin-bottom: 12px; display: flex; gap: 15px; flex-wrap: wrap;
+  }
+  .battle-desc {
+    font-size: 0.95rem; line-height: 1.65; color: var(--text-muted);
+    margin-bottom: 15px;
+  }
+  .battle-result {
+    display: inline-block;
+    padding: 4px 14px;
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 1px;
+    border: 1px solid;
+  }
+  .battle-result.victory { color: #4CAF50; border-color: #4CAF50; background: rgba(76,175,80,0.08); }
+  .battle-result.strategic { color: var(--gold); border-color: var(--gold); background: rgba(212,160,23,0.08); }
+
+  /* ANIMATED BATTLE GRAPHIC */
+  .battle-animation-section {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,107,0,0.1);
+    padding: 40px; margin: 60px 0; text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .swords-animation {
+    display: flex; align-items: center; justify-content: center;
+    gap: 40px; padding: 30px 0;
+  }
+
+  .warrior {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+
+  .warrior-figure {
+    font-size: 4rem;
+    animation: warriorBob 1.5s ease-in-out infinite;
+  }
+  .warrior-maratha .warrior-figure { animation-direction: normal; color: var(--saffron); }
+  .warrior-enemy .warrior-figure { animation-direction: reverse; filter: hue-rotate(180deg); }
+
+  @keyframes warriorBob {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+  }
+
+  .warrior-label {
+    font-family: 'Cinzel', serif; font-size: 0.75rem;
+    letter-spacing: 2px; color: var(--text-muted);
+  }
+
+  .vs-text {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem; color: var(--gold);
+    text-shadow: 0 0 20px rgba(212,160,23,0.5);
+    animation: vsPulse 1s ease-in-out infinite;
+  }
+  @keyframes vsPulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .clash-sparks {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
+    animation: sparks 0.8s ease-in-out infinite;
+  }
+  @keyframes sparks {
+    0%,100% { opacity: 1; transform: translate(-50%,-50%) scale(1) rotate(0deg); }
+    50% { opacity: 0.5; transform: translate(-50%,-50%) scale(1.3) rotate(180deg); }
+  }
+
+  /* FORTS SECTION */
+  #forts {
+    background: var(--dark3);
+    position: relative;
+  }
+
+  .forts-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .fort-card {
+    position: relative; overflow: hidden;
+    cursor: none;
+    aspect-ratio: 3/4;
+    transition: all 0.4s;
+  }
+  .fort-card:hover .fort-img { transform: scale(1.08); }
+  .fort-card:hover .fort-overlay { background: linear-gradient(0deg, rgba(255,107,0,0.7) 0%, rgba(13,5,0,0.3) 100%); }
+
+  .fort-img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: sepia(20%) contrast(1.1);
+  }
+  .fort-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(13,5,0,0.85) 0%, rgba(13,5,0,0.2) 60%, transparent 100%);
+    transition: all 0.4s;
+  }
+  .fort-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px;
+  }
+  .fort-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; color: var(--gold); margin-bottom: 4px;
+  }
+  .fort-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 2px; color: var(--saffron);
+  }
+
+  /* CORONATION */
+  #coronation {
+    background: linear-gradient(180deg, var(--dark) 0%, #200A00 50%, var(--dark) 100%);
+    position: relative; overflow: hidden;
+  }
+  #coronation::before {
+    content: '👑';
+    position: absolute; top: 50%; left: 10%;
+    font-size: 15rem; opacity: 0.03;
+    transform: translateY(-50%);
+    animation: floatEmoji 6s ease-in-out infinite;
+  }
+  @keyframes floatEmoji {
+    0%,100% { transform: translateY(-50%); }
+    50% { transform: translateY(calc(-50% - 20px)); }
+  }
+
+  .coronation-main {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;
+  }
+
+  .coronation-facts { }
+
+  .coronation-fact-item {
+    display: flex; gap: 20px; align-items: flex-start;
+    margin-bottom: 30px; padding-bottom: 30px;
+    border-bottom: 1px solid rgba(212,160,23,0.1);
+  }
+  .coronation-fact-item:last-child { border-bottom: none; }
+
+  .fact-icon {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--maroon), var(--deep-maroon));
+    border: 2px solid var(--saffron);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  .fact-text h4 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold); font-size: 0.85rem; letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .fact-text p { font-size: 1rem; color: var(--text-muted); line-height: 1.6; }
+
+  .coronation-quote-wrap {
+    position: relative;
+  }
+  .coronation-quote-bg {
+    background: linear-gradient(135deg, rgba(255,107,0,0.05), rgba(212,160,23,0.05));
+    border: 1px solid rgba(212,160,23,0.2);
+    padding: 50px 40px;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px));
+  }
+  .coronation-quote-bg::before {
+    content: '"';
+    position: absolute; top: -20px; left: 20px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8rem; color: var(--saffron);
+    opacity: 0.15; line-height: 1;
+  }
+  .coronation-quote-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4rem; font-style: italic;
+    line-height: 1.8; color: var(--cream);
+    position: relative; z-index: 1;
+    margin-bottom: 20px;
+  }
+  .coronation-quote-author {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 3px;
+    color: var(--saffron); text-transform: uppercase;
+  }
+
+  /* NAVY & ADMINISTRATION */
+  #achievements {
+    background: var(--dark2);
+  }
+
+  .achievements-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+  }
+
+  .achievement-card {
+    background: linear-gradient(135deg, rgba(26,10,0,0.8), rgba(42,16,0,0.6));
+    border: 1px solid rgba(212,160,23,0.1);
+    padding: 35px; text-align: center;
+    position: relative; overflow: hidden;
+    transition: all 0.4s;
+    cursor: none;
+  }
+  .achievement-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .achievement-card:hover { transform: translateY(-5px); border-color: rgba(255,107,0,0.3); }
+  .achievement-card:hover::after { transform: scaleX(1); }
+
+  .achievement-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+  .achievement-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem; color: var(--gold); margin-bottom: 15px; letter-spacing: 1px;
+  }
+  .achievement-desc {
+    font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
+  }
+
+  /* VIDEO SECTION */
+  #videos {
+    background: linear-gradient(180deg, var(--dark3) 0%, var(--dark) 100%);
+  }
+
+  .videos-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;
+  }
+
+  .video-wrap {
+    position: relative; overflow: hidden;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(212,160,23,0.15);
+  }
+  .video-wrap::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+  }
+  .video-frame {
+    width: 100%; aspect-ratio: 16/9;
+    border: none; display: block;
+  }
+  .video-title {
+    padding: 15px 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem; letter-spacing: 1px; color: var(--gold);
+  }
+
+  /* LEGACY */
+  #legacy {
+    background: var(--dark2); position: relative;
+  }
+
+  .legacy-content {
+    max-width: 800px; margin: 0 auto; text-align: center;
+  }
+
+  .legacy-quote {
+    background: linear-gradient(135deg, rgba(255,107,0,0.05), rgba(212,160,23,0.05));
+    border-left: 4px solid var(--saffron); border-right: 4px solid var(--gold);
+    padding: 50px 60px; margin-bottom: 50px;
+    position: relative;
+  }
+  .legacy-quote-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem; font-style: italic;
+    color: var(--cream-light); line-height: 1.8; margin-bottom: 25px;
+  }
+  .legacy-quote-source {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem; letter-spacing: 3px;
+    color: var(--saffron); text-transform: uppercase;
+  }
+
+  .legacy-para {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem; line-height: 1.9; color: var(--text-muted);
+    margin-bottom: 30px;
+  }
+
+  /* DEATH SECTION */
+  #passing {
+    background: linear-gradient(180deg, var(--dark) 0%, #100300 50%, var(--dark) 100%);
+    position: relative; overflow: hidden;
+  }
+  #passing::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(107,15,26,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .passing-content {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+
+  .passing-text { }
+  .passing-text h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--saffron); margin-bottom: 20px;
+  }
+  .passing-text p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem; line-height: 1.9; color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .memorial-box {
+    background: linear-gradient(135deg, rgba(107,15,26,0.2), rgba(61,0,8,0.3));
+    border: 1px solid rgba(212,160,23,0.2);
+    padding: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+  .memorial-box h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem; color: var(--gold); margin-bottom: 20px;
+    text-align: center;
+  }
+  .memorial-stat {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid rgba(212,160,23,0.1);
+  }
+  .memorial-stat:last-child { border-bottom: none; }
+  .memorial-stat-key {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem; letter-spacing: 1px; color: var(--text-muted);
+  }
+  .memorial-stat-val {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem; color: var(--cream); font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); border-top: 1px solid rgba(212,160,23,0.1);
+    padding: 60px 40px; text-align: center;
+  }
+  .footer-emblem { font-size: 4rem; margin-bottom: 15px; display: block; }
+  .footer-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem; color: var(--gold); margin-bottom: 10px;
+  }
+  .footer-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 4px; color: var(--text-muted);
+    margin-bottom: 30px;
+  }
+  .footer-slogan {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: var(--saffron); margin-bottom: 40px;
+  }
+  .footer-links {
+    display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .footer-links a {
+    font-family: 'Cinzel', serif; font-size: 0.72rem;
+    letter-spacing: 2px; color: var(--text-muted);
+    text-decoration: none; transition: color 0.3s; cursor: none;
+  }
+  .footer-links a:hover { color: var(--saffron); }
+  .footer-copy {
+    font-size: 0.85rem; color: rgba(196,168,130,0.4);
+  }
+
+  /* MARATHA FLAG */
+  .bhagwa-flag {
+    display: inline-block;
+    background: linear-gradient(180deg, #FF9500 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
+    width: 50px; height: 30px;
+    vertical-align: middle; margin-right: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+  }
+  .bhagwa-flag::after {
+    content: '☸';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 14px; color: #000080;
+  }
+
+  /* PARTICLES */
+  .particle {
+    position: fixed; pointer-events: none;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--saffron);
+    opacity: 0;
+    animation: particleFly 1.5s ease forwards;
+    z-index: 9998;
+  }
+  @keyframes particleFly {
+    0% { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .early-life-grid,
+    .coronation-main,
+    .passing-content { grid-template-columns: 1fr; }
+    .forts-grid { grid-template-columns: repeat(2,1fr); }
+    .achievements-grid { grid-template-columns: 1fr; }
+    .videos-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-line { display: none; }
+    .timeline-content-left { text-align: left; padding-right: 0; padding-left: 0; }
+    .timeline-content-right { padding-left: 0; }
+    .nav-links { display: none; }
+    nav { padding: 15px 20px; }
+    .section-container { padding: 0 20px; }
+    .battles-grid { grid-template-columns: 1fr; }
+  }
+
+  /* GLOW TEXT */
+  .glow-text {
+    text-shadow: 0 0 30px rgba(255,107,0,0.5);
+  }
+
+  /* QUOTE BLOCK */
+  .inline-quote {
+    border-left: 3px solid var(--saffron);
+    padding: 15px 20px; margin: 20px 0;
+    background: rgba(255,107,0,0.05);
+    font-style: italic; color: var(--cream-light);
+    font-family: 'EB Garamond', serif; font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* COUNTER ANIMATION */
+  .counter { font-family: 'Cinzel Decorative', serif; }
+
+  /* NUMBERS BAR */
+  .numbers-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid rgba(212,160,23,0.2);
+    margin: 60px 0;
+  }
+  .number-item {
+    text-align: center; padding: 40px 20px;
+    border-right: 1px solid rgba(212,160,23,0.1);
+    position: relative;
+  }
+  .number-item:last-child { border-right: none; }
+  .number-val {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem; color: var(--saffron);
+    display: block; margin-bottom: 8px;
+  }
+  .number-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* Maratha Seal */
+  .maratha-seal {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; margin: 0 auto 30px;
+    box-shadow: 0 0 40px rgba(212,160,23,0.2), inset 0 0 40px rgba(255,107,0,0.05);
+    animation: sealRotate 20s linear infinite;
+    position: relative;
+  }
+  @keyframes sealRotate {
+    0% { box-shadow: 0 0 40px rgba(212,160,23,0.2), inset 0 0 40px rgba(255,107,0,0.05); }
+    50% { box-shadow: 0 0 60px rgba(255,107,0,0.4), inset 0 0 60px rgba(212,160,23,0.1); }
+    100% { box-shadow: 0 0 40px rgba(212,160,23,0.2), inset 0 0 40px rgba(255,107,0,0.05); }
+  }
+
+  /* PARALLAX BG text */
+  .section-watermark {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: min(15vw, 180px);
+    color: rgba(212,160,23,0.02);
+    white-space: nowrap; pointer-events: none; user-select: none;
+    z-index: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">⚔ Shivaji Maharaj</div>
+  <ul class="nav-links">
+    <li><a href="#early-life">Early Life</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#battles">Battles</a></li>
+    <li><a href="#forts">Forts</a></li>
+    <li><a href="#coronation">Coronation</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#legacy">Legacy</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-rays"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-subtitle-top">The Great Maratha King</div>
+    <div class="hero-emblem">⚔️🦁</div>
+    <h1 class="hero-title">Chhatrapati<br>Shivaji Maharaj</h1>
+    <div class="hero-title-sub">छत्रपती शिवाजी महाराज</div>
+    <div class="hero-dates">19 February 1630 — 3 April 1680</div>
+    <p class="hero-tagline">"The Founder of the Maratha Empire, the Lion of the Sahyadris, the Champion of Swarajya — a warrior whose valor echoes through eternity."</p>
+    <div class="hero-cta">
+      <a href="#early-life" class="btn-primary">Explore His Story</a>
+      <a href="#timeline" class="btn-secondary">View Timeline</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">SCROLL</div>
+</section>
+
+<!-- EARLY LIFE -->
+<section id="early-life">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter I</span>
+      <h2 class="section-title">Birth & Early Life</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Born into valor, raised on stories of heroism, destined for greatness</p>
+    </div>
+
+    <div class="early-life-grid">
+      <div class="reveal-left">
+        <div class="early-life-image-wrap">
+          <img class="early-life-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/ShivajiMaharaj.jpg/800px-ShivajiMaharaj.jpg"
+            alt="Shivaji Maharaj Portrait"
+            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Chhatrapati_Shivaji_Maharaj_portrait.jpg/600px-Chhatrapati_Shivaji_Maharaj_portrait.jpg'">
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="info-card">
+          <h3>🏰 Birth</h3>
+          <p>Shivaji Bhonsale was born on <strong style="color:var(--saffron)">19 February 1630</strong> at the majestic <strong style="color:var(--gold)">Shivneri Fort</strong> in the Pune district of Maharashtra. His mother Jijabai named him "Shiva" after the local goddess Shivai.</p>
+        </div>
+        <div class="info-card">
+          <h3>👨‍👩‍👦 Royal Parents</h3>
+          <p><strong style="color:var(--gold)">Father: Shahaji Bhonsale</strong> — A Maratha military commander in the Deccan Sultanates.<br><strong style="color:var(--gold)">Mother: Jijabai</strong> — A devout woman of remarkable strength who shaped Shivaji's character with tales of Ramayana and Mahabharata.</p>
+        </div>
+        <div class="info-card">
+          <h3>📚 Education & Upbringing</h3>
+          <p>Raised primarily by his mother Jijabai and mentor <strong style="color:var(--gold)">Dadoji Kondadev</strong>, Shivaji learned administration, governance, military tactics, and developed deep Hindu values and justice. He grew up with Mavala companions who would later form the core of his army.</p>
+        </div>
+
+        <div class="birth-stats">
+          <div class="stat-box">
+            <span class="val">1630</span>
+            <span class="lbl">Year of Birth</span>
+          </div>
+          <div class="stat-box">
+            <span class="val">Shivneri</span>
+            <span class="lbl">Birthplace Fort</span>
+          </div>
+          <div class="stat-box">
+            <span class="val">16</span>
+            <span class="lbl">Age at First Conquest</span>
+          </div>
+          <div class="stat-box">
+            <span class="val">360+</span>
+            <span class="lbl">Forts in Empire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="numbers-bar reveal">
+      <div class="number-item">
+        <span class="number-val">50</span>
+        <span class="number-label">Years of Life</span>
+      </div>
+      <div class="number-item">
+        <span class="number-val">300+</span>
+        <span class="number-label">Battles & Campaigns</span>
+      </div>
+      <div class="number-item">
+        <span class="number-val">360+</span>
+        <span class="number-label">Forts Controlled</span>
+      </div>
+      <div class="number-item">
+        <span class="number-val">4.1M</span>
+        <span class="number-label">km² at Peak</span>
+      </div>
+    </div>
+
+    <div class="reveal" style="background:rgba(255,107,0,0.04);border:1px solid rgba(212,160,23,0.1);padding:40px;max-width:800px;margin:0 auto;">
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:20px;text-align:center;">🌟 THE VISION OF SWARAJYA</h3>
+      <p style="font-family:'EB Garamond',serif;font-size:1.15rem;line-height:1.9;color:var(--text-muted);text-align:center;">
+        From his earliest years, young Shivaji dreamed of an independent homeland — <em style="color:var(--cream)">Swarajya</em> (self-rule) for the Maratha people. Under the inspiration of his mother Jijabai and the epics of the Ramayana, he vowed to create a kingdom free from foreign domination. This dream would shape every decision of his extraordinary life.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-watermark">SWARAJYA</div>
+  <div class="section-container" style="position:relative;z-index:1;">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter II</span>
+      <h2 class="section-title">The Life Timeline</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">From a young prince to a legendary emperor — the milestones of a remarkable journey</p>
+    </div>
+
+    <div class="timeline-items" style="position:relative;">
+      <div class="timeline-line"></div>
+
+      <!-- Timeline Items -->
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1630</div>
+          <div class="timeline-event-title">🏰 Birth at Shivneri</div>
+          <p class="timeline-event-desc">Born on February 19 at Shivneri Fort. Mother Jijabai names him after the goddess Shivai. His destiny is whispered in the winds of the Sahyadris.</p>
+        </div>
+        <div class="timeline-node">👶</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">📚</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1636–1645</div>
+          <div class="timeline-event-title">🌿 Formative Years in Pune</div>
+          <p class="timeline-event-desc">Raised by Jijabai and Dadoji Kondadev in Pune. Learns military arts, administration and the Vedas. Forms deep friendships with Mavala companions — Tanaji Malusare, Yesaji Kank, and others.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1645–47</div>
+          <div class="timeline-event-title">🏰 First Fort — Torna!</div>
+          <p class="timeline-event-desc">At just 16 years old, Shivaji captures Torna Fort from Bijapur Sultanate — his first act of swarajya. He uses the treasury found inside to build Rajgad Fort. The lion has awakened.</p>
+        </div>
+        <div class="timeline-node">⚔️</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">🤝</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1656</div>
+          <div class="timeline-event-title">📜 Marriage & Alliances</div>
+          <p class="timeline-event-desc">Shivaji marries Saibai Nimbalkar among other wives. He strategically expands his territory, capturing Javali from Chandrarao More — a crucial step in consolidating the Sahyadri region.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1659</div>
+          <div class="timeline-event-title">🗡️ Battle of Pratapgad — Afzal Khan Slain!</div>
+          <p class="timeline-event-desc">The defining moment. Bijapur sends the giant general Afzal Khan with 10,000 troops. In a private meeting, Shivaji uses his wagh nakh (tiger claw) to kill Afzal Khan. Maratha forces annihilate the Bijapur army. Legend is born.</p>
+        </div>
+        <div class="timeline-node">🐯</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">🦅</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1660</div>
+          <div class="timeline-event-title">🌄 Battle of Pavan Khind</div>
+          <p class="timeline-event-desc">Shivaji retreats through Pavan Khind (Vishalgad). Baji Prabhu Deshpande and 300 Marathas hold the narrow pass against 10,000 Adilshahi soldiers, sacrificing their lives until Shivaji reaches safety. Immortal heroism.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1663</div>
+          <div class="timeline-event-title">🌙 Night Raid on Shaista Khan</div>
+          <p class="timeline-event-desc">Mughal viceroy Shaista Khan occupies Pune. Shivaji leads a daring 400-man night raid through a wedding procession into Shaista Khan's bedroom. Khan barely escapes, losing his fingers. Aurangzeb is humiliated.</p>
+        </div>
+        <div class="timeline-node">🌙</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">💰</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1664</div>
+          <div class="timeline-event-title">⚓ Sack of Surat</div>
+          <p class="timeline-event-desc">Shivaji storms Surat — the wealthiest Mughal port — looting it to fund the Maratha cause. The English and Dutch factories are spared. The Mughal empire reels. Aurangzeb dispatches his best general: Jai Singh.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1666</div>
+          <div class="timeline-event-title">🚪 The Great Escape from Agra!</div>
+          <p class="timeline-event-desc">Summoned to Aurangzeb's court in Agra, Shivaji is placed under house arrest. In the most daring escape of his life, he hides in fruit baskets and flees — a 2,000 km journey back to Maharashtra. The entire Mughal empire searches for him in vain.</p>
+        </div>
+        <div class="timeline-node">🧺</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">⚔️</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1670</div>
+          <div class="timeline-event-title">🔥 Recapture & Second Sack of Surat</div>
+          <p class="timeline-event-desc">Shivaji recaptures most forts lost in the Treaty of Purandar in just 45 days. He sacks Surat a second time, further funding his growing empire. The Maratha navy is rapidly expanding.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1674</div>
+          <div class="timeline-event-title">👑 CORONATION — Chhatrapati!</div>
+          <p class="timeline-event-desc">On June 6, 1674 at Raigad Fort, Shivaji is crowned Chhatrapati (Emperor) in a grand ceremony performed by Pandit Gagabhatt of Varanasi. Swarajya is officially born. The Maratha Empire stands as a sovereign Hindu kingdom.</p>
+        </div>
+        <div class="timeline-node">👑</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">⚓</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">1674–80</div>
+          <div class="timeline-event-title">🌊 Southern Campaigns</div>
+          <p class="timeline-event-desc">Shivaji launches campaigns into Karnataka and Tamil Nadu. The Battle of Jinji (1677) extends Maratha influence deep into the south. He meets Sambhaji, his son who is to succeed him, and works to consolidate the vast empire.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">1680</div>
+          <div class="timeline-event-title">🕊️ Departure of the Lion</div>
+          <p class="timeline-event-desc">On April 3, 1680, Chhatrapati Shivaji Maharaj passed away at Raigad Fort at the age of 50. He left behind a vast empire, a powerful navy, a just administration — and an eternal legacy that inspired all future freedom struggles of India.</p>
+        </div>
+        <div class="timeline-node">🕊️</div>
+        <div class="timeline-empty"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BATTLES SECTION -->
+<section id="battles">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter III</span>
+      <h2 class="section-title">Battles for Swarajya</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Every battle a story of impossible courage, tactical brilliance and undying spirit</p>
+    </div>
+
+    <!-- Animated Battle Scene -->
+    <div class="battle-animation-section reveal">
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;margin-bottom:20px;">⚔️ THE MARATHA SPIRIT IN BATTLE</h3>
+      <div class="swords-animation">
+        <div class="warrior warrior-maratha">
+          <div class="warrior-figure">🗡️</div>
+          <div class="warrior-label">MARATHA WARRIORS</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--saffron);letter-spacing:1px;text-align:center;">JAY BHAVANI!</div>
+        </div>
+        <div class="vs-text">⚡VS⚡</div>
+        <div class="warrior warrior-enemy">
+          <div class="warrior-figure">🏹</div>
+          <div class="warrior-label">MUGHAL / BIJAPUR FORCES</div>
+          <div style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--text-muted);letter-spacing:1px;text-align:center;">10x Larger Armies</div>
+        </div>
+      </div>
+      <div class="inline-quote" style="max-width:600px;margin:20px auto 0;">
+        "Shivaji never fought a fair battle — he always fought smart battles. Guerrilla warfare, night raids, mountain passes — the land itself was his ally."
+      </div>
+    </div>
+
+    <div class="battles-grid">
+
+      <!-- Battle 1 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <img class="battle-bg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Battle_of_Pratapgad.jpg/800px-Battle_of_Pratapgad.jpg"
+            alt="Battle of Pratapgad"
+            onerror="this.style.background='linear-gradient(135deg,#3D0008,#1A0A00)'">
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1659</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">⚔ Battle of Pratapgad</div>
+          <div class="battle-meta">
+            <span>📍 Pratapgad Fort</span>
+            <span>⚔ Vs. Bijapur Sultanate</span>
+          </div>
+          <p class="battle-desc">The most dramatic battle of Shivaji's life. Afzal Khan, a giant Bijapur general, led 10,000 troops to crush Shivaji. In a private meeting, Shivaji killed Afzal Khan with his wagh nakh (tiger claws) hidden under his armor. Maratha forces then ambushed the leaderless Bijapur army. A complete Maratha victory that shocked the entire Deccan.</p>
+          <span class="battle-result victory">✓ DECISIVE VICTORY</span>
+        </div>
+      </div>
+
+      <!-- Battle 2 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <img class="battle-bg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Pavan_khind.jpg/800px-Pavan_khind.jpg"
+            alt="Battle of Pavan Khind"
+            onerror="this.style.background='linear-gradient(135deg,#1A0000,#0D0500)'">
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1660</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🏔 Battle of Pavan Khind</div>
+          <div class="battle-meta">
+            <span>📍 Ghod Khind Pass</span>
+            <span>⚔ Vs. Siddi Masud</span>
+          </div>
+          <p class="battle-desc">Surrounded by 10,000 Bijapur soldiers, Shivaji needed to escape to Vishalgad. Brave Baji Prabhu Deshpande volunteered to hold the narrow Ghod Khind pass with just 300 soldiers. He fought until he heard the victory cannon of Vishalgad Fort — then fell. This sacrifice is one of the greatest in Maratha history.</p>
+          <span class="battle-result victory">✓ SHIVAJI ESCAPED SAFELY</span>
+        </div>
+      </div>
+
+      <!-- Battle 3 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A0500,#3D1000);display:flex;align-items:center;justify-content:center;font-size:5rem;">🌙</div>
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1663</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🌙 Raid on Shaista Khan</div>
+          <div class="battle-meta">
+            <span>📍 Lal Mahal, Pune</span>
+            <span>⚔ Vs. Mughal Viceroy</span>
+          </div>
+          <p class="battle-desc">Mughal viceroy Shaista Khan had occupied Pune. Shivaji led just 400 men disguised as a wedding procession at night. They scaled the walls and attacked the palace. Shaista Khan barely escaped by jumping out a window, losing three fingers. The Mughals were humiliated and Khan was transferred to Bengal in disgrace.</p>
+          <span class="battle-result victory">✓ AUDACIOUS VICTORY</span>
+        </div>
+      </div>
+
+      <!-- Battle 4 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#001A3D,#000D26);display:flex;align-items:center;justify-content:center;font-size:5rem;">⚓</div>
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1664</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">⚓ Sack of Surat (First)</div>
+          <div class="battle-meta">
+            <span>📍 Surat Port</span>
+            <span>⚔ Vs. Mughal Empire</span>
+          </div>
+          <p class="battle-desc">Surat was the richest city in Mughal India and their main port. Shivaji attacked with 4,000 cavalry and looted the city for 4 days, accumulating enormous wealth to fund his campaigns. He deliberately spared the English and Dutch factories, showing diplomatic wisdom. Mughal prestige was severely damaged.</p>
+          <span class="battle-result victory">✓ STRATEGIC VICTORY</span>
+        </div>
+      </div>
+
+      <!-- Battle 5 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <img class="battle-bg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Battle_of_Kolhapur.jpg/800px-Battle_of_Kolhapur.jpg"
+            alt="Battle of Kolhapur"
+            onerror="this.style.background='linear-gradient(135deg,#2A0000,#0D0000)'">
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1659</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🐴 Battle of Kolhapur</div>
+          <div class="battle-meta">
+            <span>📍 Kolhapur Region</span>
+            <span>⚔ Vs. Bijapur Army</span>
+          </div>
+          <p class="battle-desc">After Pratapgad, Bijapur sent another general — Rustam Zaman — with a fresh army. Shivaji met them at Kolhapur and delivered another crushing defeat. The Bijapur cavalry was scattered and the Maratha empire expanded significantly in the southern Deccan. Two decisive victories in a single year sent a clear message to all opponents.</p>
+          <span class="battle-result victory">✓ COMPLETE VICTORY</span>
+        </div>
+      </div>
+
+      <!-- Battle 6 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <img class="battle-bg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Battle_of_Salher.jpg/800px-Battle_of_Salher.jpg"
+            alt="Battle of Salher"
+            onerror="this.style.background='linear-gradient(135deg,#001A00,#000D00)'">
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1672</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🏔 Battle of Salher</div>
+          <div class="battle-meta">
+            <span>📍 Salher Fort, Nashik</span>
+            <span>⚔ Vs. Mughal Army</span>
+          </div>
+          <p class="battle-desc">The largest open-field battle Shivaji ever fought. Mughal forces laid siege to Salher Fort. Shivaji sent his generals Prataprao Gujar and Moropant Trimbak Pingle who defeated the Mughal army of 40,000 men in an open pitched battle. Over 6,000 Mughal soldiers were killed and thousands captured. One of Maratha history's greatest military triumphs.</p>
+          <span class="battle-result victory">✓ LANDMARK VICTORY</span>
+        </div>
+      </div>
+
+      <!-- Battle 7 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A1500,#0D0A00);display:flex;align-items:center;justify-content:center;font-size:5rem;">🏰</div>
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1665</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🏰 Treaty of Purandar</div>
+          <div class="battle-meta">
+            <span>📍 Purandar Fort</span>
+            <span>⚔ Jai Singh I (Mughal)</span>
+          </div>
+          <p class="battle-desc">Aurangzeb sent Raja Jai Singh of Amber with a massive army. After fierce resistance, Shivaji signed the Treaty of Purandar — surrendering 23 forts and 400,000 hun. A tactical retreat, not a defeat. Shivaji later recaptured all forts within months. He would never surrender his spirit, only bide his time.</p>
+          <span class="battle-result strategic">◈ STRATEGIC RETREAT</span>
+        </div>
+      </div>
+
+      <!-- Battle 8 -->
+      <div class="battle-card reveal">
+        <div class="battle-img-wrap">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#0D001A,#050008);display:flex;align-items:center;justify-content:center;font-size:5rem;">🧺</div>
+          <div class="battle-img-overlay"></div>
+          <div class="battle-year-badge">1666</div>
+        </div>
+        <div class="battle-content">
+          <div class="battle-name">🚀 Escape from Agra</div>
+          <div class="battle-meta">
+            <span>📍 Agra → Raigad</span>
+            <span>⚔ Mughal Empire</span>
+          </div>
+          <p class="battle-desc">Invited to Aurangzeb's court in Agra, Shivaji was placed under house arrest. In one of history's most daring escapes, he faked illness and used fruit basket deliveries to smuggle himself out — then traveled 2,000 km back to Maharashtra disguised as a saint. The Mughal empire was humiliated. The return of Shivaji energized all of Maharashtra.</p>
+          <span class="battle-result victory">✓ LEGENDARY ESCAPE</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORTS SECTION -->
+<section id="forts">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter IV</span>
+      <h2 class="section-title">Forts of the Maratha Empire</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Stone guardians of Swarajya — each fort a chapter in the story of freedom</p>
+    </div>
+
+    <div class="forts-grid">
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Raigad_fort.jpg/800px-Raigad_fort.jpg"
+          alt="Raigad Fort"
+          onerror="this.style.background='#1A0A00'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">👑 Raigad Fort</div>
+          <div class="fort-year">Capital of Maratha Empire</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Shivneri_Fort.jpg/800px-Shivneri_Fort.jpg"
+          alt="Shivneri Fort"
+          onerror="this.style.background='#0D1A00'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">🏰 Shivneri Fort</div>
+          <div class="fort-year">Birthplace of Shivaji — 1630</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Pratapgad_fort.jpg/800px-Pratapgad_fort.jpg"
+          alt="Pratapgad Fort"
+          onerror="this.style.background='#1A0500'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">⚔ Pratapgad Fort</div>
+          <div class="fort-year">Site of Afzal Khan's defeat — 1659</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Sindhudurg_Fort.jpg/800px-Sindhudurg_Fort.jpg"
+          alt="Sindhudurg Fort"
+          onerror="this.style.background='#001A1A'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">⚓ Sindhudurg Fort</div>
+          <div class="fort-year">Sea Fort — Built 1664–67</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Torna_fort.jpg/800px-Torna_fort.jpg"
+          alt="Torna Fort"
+          onerror="this.style.background='#0D0D00'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">🏔 Torna Fort</div>
+          <div class="fort-year">First Conquest — 1645</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sinhagad_Fort.jpg/800px-Sinhagad_Fort.jpg"
+          alt="Sinhagad Fort"
+          onerror="this.style.background='#001A0D'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">🦁 Sinhagad Fort</div>
+          <div class="fort-year">Tanaji's Sacrifice — 1670</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rajgad_fort.jpg/800px-Rajgad_fort.jpg"
+          alt="Rajgad Fort"
+          onerror="this.style.background='#1A0005'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">🏰 Rajgad Fort</div>
+          <div class="fort-year">First Capital — 1648–70</div>
+        </div>
+      </div>
+
+      <div class="fort-card reveal">
+        <img class="fort-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Vijaydurg_fort.jpg/800px-Vijaydurg_fort.jpg"
+          alt="Vijaydurg Fort"
+          onerror="this.style.background='#00001A'">
+        <div class="fort-overlay"></div>
+        <div class="fort-info">
+          <div class="fort-name">⚓ Vijaydurg Fort</div>
+          <div class="fort-year">Naval Headquarters</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:40px;">
+      <div class="inline-quote" style="max-width:700px;margin:0 auto;">
+        "Shivaji Maharaj maintained over 360 forts — from the Sahyadri mountains to the Konkan coast. Each fort was a symbol of Maratha sovereignty and a bastion of Swarajya."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORONATION -->
+<section id="coronation">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter V</span>
+      <h2 class="section-title">The Grand Coronation</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">June 6, 1674 — The day Swarajya became a reality</p>
+    </div>
+
+    <div class="coronation-main">
+      <div class="coronation-facts reveal-left">
+        <div class="maratha-seal">👑</div>
+
+        <div class="coronation-fact-item">
+          <div class="fact-icon">📅</div>
+          <div class="fact-text">
+            <h4>Date of Coronation</h4>
+            <p>June 6, 1674 (Jyeshtha Shukla Trayodashi, Ananda Samvatsara) at Raigad Fort. An auspicious day selected by Pandit Gagabhatt of Varanasi after elaborate calculations.</p>
+          </div>
+        </div>
+
+        <div class="coronation-fact-item">
+          <div class="fact-icon">🏰</div>
+          <div class="fact-text">
+            <h4>Location — Raigad Fort</h4>
+            <p>Raigad (also called Rairi) became the new capital. Perched 820 meters above sea level, it was an impregnable mountain fortress overlooking the Konkan. Shivaji himself designed the city of Pachad at its base.</p>
+          </div>
+        </div>
+
+        <div class="coronation-fact-item">
+          <div class="fact-icon">🙏</div>
+          <div class="fact-text">
+            <h4>The Ceremony</h4>
+            <p>Pandit Gagabhatt performed the Vedic coronation rituals. Shivaji was anointed with holy waters from all the sacred rivers of India. He was crowned with a gem-studded crown and given the titles <em>Chhatrapati, Shakakarta, Kshatriya Kulavantas, Haindava Dharmoddhaarak</em>.</p>
+          </div>
+        </div>
+
+        <div class="coronation-fact-item">
+          <div class="fact-icon">🌍</div>
+          <div class="fact-text">
+            <h4>Historic Significance</h4>
+            <p>After over 300 years of Muslim sultanate rule, a Hindu Maratha king sat on a sovereign throne. 50,000+ people attended. It wasn't just a coronation — it was the rebirth of a civilization's pride. Even the English East India Company sent envoys.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="coronation-quote-bg">
+          <p class="coronation-quote-text">
+            "Shivaji's coronation was not merely a political event — it was a renaissance. For a people crushed under centuries of foreign rule, it was the moment they dared to believe again. The lion had not just conquered territory; he had conquered the imagination of an entire civilization."
+          </p>
+          <div class="coronation-quote-author">— Historical Analysis of the Maratha Renaissance</div>
+        </div>
+
+        <div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+          <div class="stat-box" style="padding:25px;">
+            <span class="val" style="font-size:1.2rem;">50,000+</span>
+            <span class="lbl">Attendees</span>
+          </div>
+          <div class="stat-box" style="padding:25px;">
+            <span class="val" style="font-size:1.2rem;">June 6</span>
+            <span class="lbl">Coronation Day</span>
+          </div>
+          <div class="stat-box" style="padding:25px;">
+            <span class="val" style="font-size:1.2rem;">1674</span>
+            <span class="lbl">Year of Swarajya</span>
+          </div>
+          <div class="stat-box" style="padding:25px;">
+            <span class="val" style="font-size:1.2rem;">820m</span>
+            <span class="lbl">Raigad Altitude</span>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;background:rgba(255,107,0,0.05);border:1px solid rgba(255,107,0,0.2);padding:25px;">
+          <h4 style="font-family:'Cinzel',serif;color:var(--saffron);font-size:0.8rem;letter-spacing:2px;margin-bottom:12px;">ROYAL TITLES BESTOWED</h4>
+          <p style="font-family:'EB Garamond',serif;font-size:1rem;color:var(--text-muted);line-height:1.8;">
+            🔸 <strong style="color:var(--cream)">Chhatrapati</strong> — Lord of the Parasol (Emperor)<br>
+            🔸 <strong style="color:var(--cream)">Shakakarta</strong> — Creator of a New Era<br>
+            🔸 <strong style="color:var(--cream)">Kshatriya Kulavantas</strong> — Head of the Kshatriya Clan<br>
+            🔸 <strong style="color:var(--cream)">Haindava Dharmoddhaarak</strong> — Protector of Hindu Dharma
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS & ADMINISTRATION -->
+<section id="achievements">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter VI</span>
+      <h2 class="section-title">The Architect of an Empire</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Beyond battles — the administration, navy, and governance that made Swarajya great</p>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">⚓</span>
+        <div class="achievement-title">Father of the Indian Navy</div>
+        <p class="achievement-desc">Shivaji was the first Indian ruler to build and maintain a powerful naval force. His Maratha Navy had over 200 warships — Ghurabs and Gallivats — patrolling the Konkan coast. He built sea forts like Sindhudurg, Vijaydurg, and Jaigad. He is officially recognized as the "Father of the Indian Navy."</p>
+      </div>
+
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">⚖️</span>
+        <div class="achievement-title">Just & Secular Governance</div>
+        <p class="achievement-desc">Shivaji ran a remarkably just administration. He treated all religions with equal respect — many Muslims served in high positions in his army and court. He never allowed desecration of mosques or temples in conquered territories. He treated captured women with utmost dignity — even when his own soldiers found royal women of enemy kings, he returned them with honor.</p>
+      </div>
+
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">📜</span>
+        <div class="achievement-title">Ashtapradhan Mandal</div>
+        <p class="achievement-desc">Shivaji created the Ashtapradhan (council of eight ministers) system — an unprecedented administrative structure. Each minister had a specific portfolio: Peshwa (PM), Amatya (Finance), Mantri (Records), Senapati (Military), Nyayadhish (Justice), Panditrao (Religious), Sachiv (Correspondence), and Shumantra (Foreign Affairs).</p>
+      </div>
+
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">💰</span>
+        <div class="achievement-title">Revenue Reform (Ryotwari)</div>
+        <p class="achievement-desc">Shivaji abolished the Jagirdari system. He introduced direct revenue collection from farmers (Ryotwari) — eliminating the exploitative middlemen. He measured land using a standardized unit (the kathi) and fixed fair taxes. He forgave revenue during famines and provided farmers with seeds, loans, and animals to rebuild.</p>
+      </div>
+
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">🛡️</span>
+        <div class="achievement-title">Guerrilla Warfare Pioneer</div>
+        <p class="achievement-desc">Shivaji perfected Ganimi Kava (guerrilla warfare) — using the Sahyadri mountains, jungles, and narrow passes to defeat much larger armies. He trained small, swift cavalry units (Mavale) who could strike and disappear like lightning. His tactics were so advanced, they are still studied in modern military academies worldwide.</p>
+      </div>
+
+      <div class="achievement-card reveal">
+        <span class="achievement-icon">🌿</span>
+        <div class="achievement-title">Language & Culture</div>
+        <p class="achievement-desc">Shivaji replaced Persian with Marathi and Sanskrit as the official languages of his court. He created a Sanskrit-based dictionary of administrative terms called "Rajyavyavahar Kosh." He was a deep scholar of the Vedas, and commissioned the construction of many temples. He championed Marathi identity at a time when it was being suppressed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section id="videos">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter VII</span>
+      <h2 class="section-title">Watch & Learn</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Documentaries, historical analyses and storytelling about Chhatrapati Shivaji Maharaj</p>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-wrap reveal">
+        <iframe class="video-frame"
+          src="https://www.youtube.com/embed/0GqbPeFmNJI"
+          title="Shivaji Maharaj Full History"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+        <div class="video-title">📜 Chhatrapati Shivaji Maharaj — Complete History</div>
+      </div>
+
+      <div class="video-wrap reveal">
+        <iframe class="video-frame"
+          src="https://www.youtube.com/embed/OJd1y7F8KLM"
+          title="Battle of Pratapgad"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+        <div class="video-title">⚔ Battle of Pratapgad — Afzal Khan's Defeat</div>
+      </div>
+
+      <div class="video-wrap reveal">
+        <iframe class="video-frame"
+          src="https://www.youtube.com/embed/BqDqnSsPEhU"
+          title="Shivaji Coronation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+        <div class="video-title">👑 The Coronation of Chhatrapati Shivaji Maharaj</div>
+      </div>
+
+      <div class="video-wrap reveal">
+        <iframe class="video-frame"
+          src="https://www.youtube.com/embed/ydXbBVWqxgg"
+          title="Shivaji Escape from Agra"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+        <div class="video-title">🧺 The Daring Escape from Aurangzeb's Agra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSING -->
+<section id="passing">
+  <div class="section-container" style="position:relative;z-index:1;">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter VIII</span>
+      <h2 class="section-title">The Lion's Last Breath</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">April 3, 1680 — A great light departed, but never faded</p>
+    </div>
+
+    <div class="passing-content">
+      <div class="passing-text reveal-left">
+        <h3>🕊️ DEPARTURE OF THE CHHATRAPATI</h3>
+        <p>In late March 1680, Shivaji Maharaj fell seriously ill at Raigad Fort. He had been suffering from fever and dysentery for several weeks. On <strong style="color:var(--gold)">April 3, 1680</strong>, at the age of 50, the great Chhatrapati breathed his last.</p>
+        <p>His death plunged Maharashtra into grief. Fifty years of tireless struggle — founding a kingdom from nothing, fighting the greatest empires of his time, building institutions that would outlast him — had taken their toll. Yet the Maratha Empire he built would survive and grow for over 150 years after his passing.</p>
+        <p>Shivaji was cremated at Raigad Fort. His samadhi (memorial) stands there to this day, visited by millions every year. His son <strong style="color:var(--gold)">Sambhaji Maharaj</strong> succeeded him and continued the struggle against the Mughals.</p>
+        <div class="inline-quote">
+          "He did not just build a kingdom — he rebuilt a civilization. He proved that no empire is too powerful to challenge when a people have the will to be free."
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="memorial-box">
+          <h3>📊 The Shivaji Maharaj Legacy in Numbers</h3>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Born</span>
+            <span class="memorial-stat-val">19 February 1630, Shivneri Fort</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Died</span>
+            <span class="memorial-stat-val">3 April 1680, Raigad Fort</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Age</span>
+            <span class="memorial-stat-val">50 years</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Reign as Chhatrapati</span>
+            <span class="memorial-stat-val">1674 – 1680 (6 years)</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Forts Controlled</span>
+            <span class="memorial-stat-val">360+ forts across Deccan</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Empire at Death</span>
+            <span class="memorial-stat-val">4.1 million km² (Maratha Empire)</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Naval Fleet</span>
+            <span class="memorial-stat-val">200+ warships</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Successor</span>
+            <span class="memorial-stat-val">Sambhaji Maharaj (son)</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Dynasty</span>
+            <span class="memorial-stat-val">Bhonsle (Maratha)</span>
+          </div>
+          <div class="memorial-stat">
+            <span class="memorial-stat-key">Capital</span>
+            <span class="memorial-stat-val">Raigad Fort</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGACY -->
+<section id="legacy">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Chapter IX</span>
+      <h2 class="section-title">An Eternal Legacy</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">His memory lives not in stone, but in the hearts of a billion people</p>
+    </div>
+
+    <div class="legacy-content reveal">
+      <div class="legacy-quote">
+        <p class="legacy-quote-text">"Shivaji was one of the greatest national figures India has ever produced. He was a born leader of men, a reformer, and a great ruler. His personal courage was remarkable."</p>
+        <div class="legacy-quote-source">— Jawaharlal Nehru, First Prime Minister of India</div>
+      </div>
+
+      <p class="legacy-para">Chhatrapati Shivaji Maharaj's legacy transcends time, geography and religion. He proved that a small kingdom, with the right leadership and the will of its people, could stand against the mightiest empires on earth — the Mughal Empire, the Bijapur Sultanate, the Golconda Sultanate, the Siddi Navy, and even the Portuguese and British sea powers.</p>
+
+      <p class="legacy-para">He was not merely a warrior — he was a statesman, an administrator, a naval strategist, a linguist, and a philosopher of governance. His Ashtapradhan system, his revenue reforms, his treatment of women and prisoners of war, his respect for all religions — these were centuries ahead of their time.</p>
+
+      <div class="legacy-quote" style="border-left-color:var(--gold);border-right-color:var(--saffron);">
+        <p class="legacy-quote-text">"The life of Shivaji has been a source of inspiration to countless generations of Indians. He showed that it is possible to combine military genius with political wisdom, and personal bravery with administrative skill."</p>
+        <div class="legacy-quote-source">— Bal Gangadhar Tilak, Father of Indian Nationalism</div>
+      </div>
+
+      <p class="legacy-para">Bal Gangadhar Tilak revived the tradition of Shiv Jayanti (Shivaji's birthday celebration) in 1893 to use it as a unifying force for the Indian independence movement. Mahatma Gandhi, Subhas Chandra Bose, and countless freedom fighters drew inspiration from Shivaji's example. Today, the Indian Navy's motto — <em style="color:var(--saffron)">"Sha No Varuna"</em> — carries forward the naval tradition Shivaji began.</p>
+
+      <div style="background:linear-gradient(135deg,rgba(255,107,0,0.08),rgba(212,160,23,0.08));border:1px solid rgba(212,160,23,0.2);padding:50px;margin-top:40px;">
+        <h3 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:1.5rem;text-align:center;margin-bottom:30px;">जय भवानी! जय शिवाजी!</h3>
+        <p style="font-family:'EB Garamond',serif;font-size:1.3rem;font-style:italic;text-align:center;color:var(--cream-light);line-height:1.8;">
+          "He was a king, a warrior, a judge — but above all, he was a servant of his people. In an age of ruthless power politics, he chose humanity. In an age of religious persecution, he chose justice. In an age of despair, he chose hope — and called it Swarajya."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-emblem">⚔️</span>
+  <div class="footer-title">Chhatrapati Shivaji Maharaj</div>
+  <div class="footer-sub">1630 — 1680 · Maratha Empire</div>
+  <div class="footer-slogan">
+    "जय भवानी! जय शिवाजी!" — Victory to the Goddess! Victory to Shivaji!
+  </div>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#early-life">Early Life</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#battles">Battles</a>
+    <a href="#forts">Forts</a>
+    <a href="#coronation">Coronation</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#videos">Videos</a>
+    <a href="#legacy">Legacy</a>
+  </div>
+  <div class="footer-copy">
+    A tribute to the greatest warrior-king of Maharashtra · Built with reverence and pride
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const dot = document.getElementById('cursorDot');
+  let mouseX = 0, mouseY = 0;
+  let curX = 0, curY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+
+  function animateCursor() {
+    curX += (mouseX - curX) * 0.12;
+    curY += (mouseY - curY) * 0.12;
+    cursor.style.left = curX + 'px';
+    cursor.style.top = curY + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Particle trail on click
+  document.addEventListener('click', (e) => {
+    for(let i = 0; i < 8; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = e.clientX + 'px';
+      p.style.top = e.clientY + 'px';
+      const angle = (i / 8) * Math.PI * 2;
+      const dist = 40 + Math.random() * 60;
+      p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+      p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+      p.style.background = i % 2 === 0 ? '#FF6B00' : '#FFD700';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 1500);
+    }
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  // Stagger children in grids
+  document.querySelectorAll('.battles-grid, .forts-grid, .achievements-grid, .videos-grid').forEach(grid => {
+    const children = grid.querySelectorAll('.reveal, .battle-card, .fort-card, .achievement-card, .video-wrap');
+    children.forEach((child, i) => {
+      child.style.transitionDelay = (i * 0.1) + 's';
+    });
+  });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if(window.scrollY > 100) {
+      nav.style.background = 'rgba(13,5,0,0.97)';
+      nav.style.borderBottom = '1px solid rgba(212,160,23,0.2)';
+    } else {
+      nav.style.background = 'linear-gradient(180deg,rgba(13,5,0,0.98) 0%,rgba(13,5,0,0) 100%)';
+      nav.style.borderBottom = '1px solid rgba(212,160,23,0.15)';
+    }
+  });
+
+  // Hover effect on links
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1.5)';
+      cursor.style.borderColor = '#FFD700';
+    });
+    a.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      cursor.style.borderColor = '#FF6B00';
+    });
+  });
+
+  // Battle cards hover cursor
+  document.querySelectorAll('.battle-card, .fort-card, .achievement-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+      cursor.style.background = 'rgba(255,107,0,0.1)';
+    });
+    card.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      cursor.style.background = 'transparent';
+    });
+  });
+</script>
+</body>
+</html>
