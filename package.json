@@ -1,0 +1,17 @@
+{
+  "name": "chhatrapati-shivaji-maharaj-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack tribute site for Chhatrapati Shivaji Maharaj.",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "node --watch backend/index.js"
+  },
+  "keywords": [
+    "shivaji",
+    "fullstack",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT"
+}

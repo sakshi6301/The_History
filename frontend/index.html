@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chhatrapati Shivaji Maharaj — The Lion of Maharashtra</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --saffron: #FF6B00;
@@ -139,6 +139,13 @@
     font-size: 5rem; margin-bottom: 20px;
     animation: fadeSlideUp 1.5s ease 0.5s both;
     filter: drop-shadow(0 0 30px rgba(255,107,0,0.6));
+  }
+  .hero-emblem:empty,
+  .footer-emblem:empty,
+  .achievement-icon:empty,
+  .fact-icon:empty,
+  .warrior-figure:empty {
+    display: none;
   }
 
   .hero-title {
@@ -295,6 +302,7 @@
 
   .early-life-image-wrap {
     position: relative;
+    background: rgba(13,5,0,0.45);
   }
   .early-life-image-wrap::before {
     content: '';
@@ -310,6 +318,18 @@
     width: 100%; height: 450px; object-fit: cover;
     position: relative; z-index: 1;
     filter: sepia(20%) contrast(1.1);
+    display: block;
+  }
+
+  .birth-image-caption {
+    position: relative; z-index: 1;
+    background: rgba(13,5,0,0.9);
+    border-top: 1px solid rgba(212,160,23,0.18);
+    padding: 14px 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold);
+    text-align: center;
   }
 
   .info-card {
@@ -362,7 +382,7 @@
     overflow: hidden;
   }
   #timeline::after {
-    content: 'JAY SHIVAJI';
+    content: 'JAY CHHATRAPATI SHIVAJI';
     position: absolute; right: -60px; top: 50%;
     transform: translateY(-50%) rotate(90deg);
     font-family: 'Cinzel Decorative', serif;
@@ -602,7 +622,7 @@
     position: relative; overflow: hidden;
   }
   #coronation::before {
-    content: '👑';
+    content: '';
     position: absolute; top: 50%; left: 10%;
     font-size: 15rem; opacity: 0.03;
     transform: translateY(-50%);
@@ -822,6 +842,117 @@
     font-size: 1rem; color: var(--cream); font-weight: 600;
   }
 
+  /* GUESTBOOK */
+  #guestbook {
+    background: linear-gradient(180deg, var(--dark2) 0%, var(--dark) 100%);
+    position: relative;
+  }
+
+  .guestbook-shell {
+    display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
+    gap: 40px; align-items: start;
+    max-width: 1050px; margin: 0 auto;
+  }
+
+  .api-panel,
+  .guestbook-form,
+  .guestbook-entry {
+    background: linear-gradient(135deg, rgba(26,10,0,0.9), rgba(42,16,0,0.65));
+    border: 1px solid rgba(212,160,23,0.18);
+  }
+
+  .api-panel {
+    padding: 32px;
+  }
+
+  .api-panel h3,
+  .guestbook-form h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold); font-size: 0.9rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .api-list {
+    list-style: none;
+  }
+
+  .api-list li {
+    display: flex; justify-content: space-between; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid rgba(212,160,23,0.1);
+    color: var(--text-muted); font-size: 1rem;
+  }
+
+  .api-list li:last-child { border-bottom: none; }
+
+  .api-list strong {
+    color: var(--cream-light); font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 1px;
+  }
+
+  .guestbook-form {
+    padding: 32px; margin-bottom: 24px;
+  }
+
+  .guestbook-fields {
+    display: grid; gap: 16px;
+  }
+
+  .guestbook-form input,
+  .guestbook-form textarea {
+    width: 100%; background: rgba(13,5,0,0.75);
+    border: 1px solid rgba(212,160,23,0.2);
+    color: var(--cream); padding: 14px 16px;
+    font: 1rem 'Crimson Text', serif;
+    outline: none;
+  }
+
+  .guestbook-form textarea {
+    min-height: 110px; resize: vertical;
+  }
+
+  .guestbook-form input:focus,
+  .guestbook-form textarea:focus {
+    border-color: var(--saffron);
+    box-shadow: 0 0 0 3px rgba(255,107,0,0.12);
+  }
+
+  .guestbook-form button {
+    width: fit-content; background: linear-gradient(135deg, var(--saffron), var(--gold));
+    border: none; color: var(--dark);
+    font-family: 'Cinzel', serif; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 13px 20px; cursor: none;
+  }
+
+  .guestbook-status {
+    color: var(--text-muted); min-height: 22px;
+  }
+
+  .guestbook-list {
+    display: grid; gap: 14px;
+  }
+
+  .guestbook-entry {
+    padding: 20px 22px;
+  }
+
+  .guestbook-entry-head {
+    display: flex; justify-content: space-between; gap: 18px;
+    color: var(--gold); font-family: 'Cinzel', serif;
+    font-size: 0.75rem; letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .guestbook-entry time {
+    color: rgba(196,168,130,0.65);
+    white-space: nowrap;
+  }
+
+  .guestbook-entry p {
+    color: var(--text-muted); line-height: 1.65;
+  }
+
   /* FOOTER */
   footer {
     background: var(--dark); border-top: 1px solid rgba(212,160,23,0.1);
@@ -866,7 +997,7 @@
     position: relative;
   }
   .bhagwa-flag::after {
-    content: '☸';
+    content: '';
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     font-size: 14px; color: #000080;
@@ -902,6 +1033,7 @@
     nav { padding: 15px 20px; }
     .section-container { padding: 0 20px; }
     .battles-grid { grid-template-columns: 1fr; }
+    .guestbook-shell { grid-template-columns: 1fr; }
   }
 
   /* GLOW TEXT */
@@ -980,7 +1112,7 @@
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo">⚔ Shivaji Maharaj</div>
+  <div class="nav-logo">Chhatrapati Chhatrapati Shivaji Maharaj</div>
   <ul class="nav-links">
     <li><a href="#early-life">Early Life</a></li>
     <li><a href="#timeline">Timeline</a></li>
@@ -989,6 +1121,7 @@
     <li><a href="#coronation">Coronation</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#legacy">Legacy</a></li>
+    <li><a href="#guestbook">Guestbook</a></li>
   </ul>
 </nav>
 
@@ -999,7 +1132,7 @@
   <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-subtitle-top">The Great Maratha King</div>
-    <div class="hero-emblem">⚔️🦁</div>
+    <div class="hero-emblem"></div>
     <h1 class="hero-title">Chhatrapati<br>Shivaji Maharaj</h1>
     <div class="hero-title-sub">छत्रपती शिवाजी महाराज</div>
     <div class="hero-dates">19 February 1630 — 3 April 1680</div>
@@ -1026,24 +1159,24 @@
       <div class="reveal-left">
         <div class="early-life-image-wrap">
           <img class="early-life-img"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/ShivajiMaharaj.jpg/800px-ShivajiMaharaj.jpg"
-            alt="Shivaji Maharaj Portrait"
-            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Chhatrapati_Shivaji_Maharaj_portrait.jpg/600px-Chhatrapati_Shivaji_Maharaj_portrait.jpg'">
+            src="assets/birth.png"
+            alt="Birth of Chhatrapati Shivaji Maharaj at Shivneri Fort">
+          <div class="birth-image-caption">Birth at Shivneri Fort · 19 February 1630</div>
         </div>
       </div>
 
       <div class="reveal-right">
         <div class="info-card">
-          <h3>🏰 Birth</h3>
-          <p>Shivaji Bhonsale was born on <strong style="color:var(--saffron)">19 February 1630</strong> at the majestic <strong style="color:var(--gold)">Shivneri Fort</strong> in the Pune district of Maharashtra. His mother Jijabai named him "Shiva" after the local goddess Shivai.</p>
+          <h3>Birth</h3>
+          <p>Chhatrapati Shivaji Bhonsale was born on <strong style="color:var(--saffron)">19 February 1630</strong> at the majestic <strong style="color:var(--gold)">Shivneri Fort</strong> in the Pune district of Maharashtra. His mother Jijabai named him "Shiva" after the local goddess Shivai.</p>
         </div>
         <div class="info-card">
-          <h3>👨‍👩‍👦 Royal Parents</h3>
-          <p><strong style="color:var(--gold)">Father: Shahaji Bhonsale</strong> — A Maratha military commander in the Deccan Sultanates.<br><strong style="color:var(--gold)">Mother: Jijabai</strong> — A devout woman of remarkable strength who shaped Shivaji's character with tales of Ramayana and Mahabharata.</p>
+          <h3>Royal Parents</h3>
+          <p><strong style="color:var(--gold)">Father: Shahaji Bhonsale</strong> — A Maratha military commander in the Deccan Sultanates.<br><strong style="color:var(--gold)">Mother: Jijabai</strong> — A devout woman of remarkable strength who shaped Chhatrapati Chhatrapati Shivaji's character with tales of Ramayana and Mahabharata.</p>
         </div>
         <div class="info-card">
-          <h3>📚 Education & Upbringing</h3>
-          <p>Raised primarily by his mother Jijabai and mentor <strong style="color:var(--gold)">Dadoji Kondadev</strong>, Shivaji learned administration, governance, military tactics, and developed deep Hindu values and justice. He grew up with Mavala companions who would later form the core of his army.</p>
+          <h3>Education & Upbringing</h3>
+          <p>Raised primarily by his mother Jijabai and mentor <strong style="color:var(--gold)">Dadoji Kondadev</strong>, Chhatrapati Shivaji learned administration, governance, military tactics, and developed deep Hindu values and justice. He grew up with Mavala companions who would later form the core of his army.</p>
         </div>
 
         <div class="birth-stats">
@@ -1087,9 +1220,9 @@
     </div>
 
     <div class="reveal" style="background:rgba(255,107,0,0.04);border:1px solid rgba(212,160,23,0.1);padding:40px;max-width:800px;margin:0 auto;">
-      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:20px;text-align:center;">🌟 THE VISION OF SWARAJYA</h3>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:20px;text-align:center;"> THE VISION OF SWARAJYA</h3>
       <p style="font-family:'EB Garamond',serif;font-size:1.15rem;line-height:1.9;color:var(--text-muted);text-align:center;">
-        From his earliest years, young Shivaji dreamed of an independent homeland — <em style="color:var(--cream)">Swarajya</em> (self-rule) for the Maratha people. Under the inspiration of his mother Jijabai and the epics of the Ramayana, he vowed to create a kingdom free from foreign domination. This dream would shape every decision of his extraordinary life.
+        From his earliest years, young Chhatrapati Shivaji dreamed of an independent homeland — <em style="color:var(--cream)">Swarajya</em> (self-rule) for the Maratha people. Under the inspiration of his mother Jijabai and the epics of the Ramayana, he vowed to create a kingdom free from foreign domination. This dream would shape every decision of his extraordinary life.
       </p>
     </div>
   </div>
@@ -1113,19 +1246,19 @@
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1630</div>
-          <div class="timeline-event-title">🏰 Birth at Shivneri</div>
+          <div class="timeline-event-title">Birth at Shivneri</div>
           <p class="timeline-event-desc">Born on February 19 at Shivneri Fort. Mother Jijabai names him after the goddess Shivai. His destiny is whispered in the winds of the Sahyadris.</p>
         </div>
-        <div class="timeline-node">👶</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">📚</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1636–1645</div>
-          <div class="timeline-event-title">🌿 Formative Years in Pune</div>
+          <div class="timeline-event-title">Formative Years in Pune</div>
           <p class="timeline-event-desc">Raised by Jijabai and Dadoji Kondadev in Pune. Learns military arts, administration and the Vedas. Forms deep friendships with Mavala companions — Tanaji Malusare, Yesaji Kank, and others.</p>
         </div>
       </div>
@@ -1133,110 +1266,110 @@
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1645–47</div>
-          <div class="timeline-event-title">🏰 First Fort — Torna!</div>
-          <p class="timeline-event-desc">At just 16 years old, Shivaji captures Torna Fort from Bijapur Sultanate — his first act of swarajya. He uses the treasury found inside to build Rajgad Fort. The lion has awakened.</p>
+          <div class="timeline-event-title">First Fort — Torna!</div>
+          <p class="timeline-event-desc">At just 16 years old, Chhatrapati Shivaji captures Torna Fort from Bijapur Sultanate — his first act of swarajya. He uses the treasury found inside to build Rajgad Fort. The lion has awakened.</p>
         </div>
-        <div class="timeline-node">⚔️</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">🤝</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1656</div>
-          <div class="timeline-event-title">📜 Marriage & Alliances</div>
-          <p class="timeline-event-desc">Shivaji marries Saibai Nimbalkar among other wives. He strategically expands his territory, capturing Javali from Chandrarao More — a crucial step in consolidating the Sahyadri region.</p>
+          <div class="timeline-event-title">Marriage & Alliances</div>
+          <p class="timeline-event-desc">Chhatrapati Shivaji marries Saibai Nimbalkar among other wives. He strategically expands his territory, capturing Javali from Chandrarao More — a crucial step in consolidating the Sahyadri region.</p>
         </div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1659</div>
-          <div class="timeline-event-title">🗡️ Battle of Pratapgad — Afzal Khan Slain!</div>
-          <p class="timeline-event-desc">The defining moment. Bijapur sends the giant general Afzal Khan with 10,000 troops. In a private meeting, Shivaji uses his wagh nakh (tiger claw) to kill Afzal Khan. Maratha forces annihilate the Bijapur army. Legend is born.</p>
+          <div class="timeline-event-title">Battle of Pratapgad — Afzal Khan Slain!</div>
+          <p class="timeline-event-desc">The defining moment. Bijapur sends the giant general Afzal Khan with 10,000 troops. In a private meeting, Chhatrapati Shivaji uses his wagh nakh (tiger claw) to kill Afzal Khan. Maratha forces annihilate the Bijapur army. Legend is born.</p>
         </div>
-        <div class="timeline-node">🐯</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">🦅</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1660</div>
-          <div class="timeline-event-title">🌄 Battle of Pavan Khind</div>
-          <p class="timeline-event-desc">Shivaji retreats through Pavan Khind (Vishalgad). Baji Prabhu Deshpande and 300 Marathas hold the narrow pass against 10,000 Adilshahi soldiers, sacrificing their lives until Shivaji reaches safety. Immortal heroism.</p>
+          <div class="timeline-event-title">Battle of Pavan Khind</div>
+          <p class="timeline-event-desc">Chhatrapati Shivaji retreats through Pavan Khind (Vishalgad). Baji Prabhu Deshpande and 300 Marathas hold the narrow pass against 10,000 Adilshahi soldiers, sacrificing their lives until Chhatrapati Shivaji reaches safety. Immortal heroism.</p>
         </div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1663</div>
-          <div class="timeline-event-title">🌙 Night Raid on Shaista Khan</div>
-          <p class="timeline-event-desc">Mughal viceroy Shaista Khan occupies Pune. Shivaji leads a daring 400-man night raid through a wedding procession into Shaista Khan's bedroom. Khan barely escapes, losing his fingers. Aurangzeb is humiliated.</p>
+          <div class="timeline-event-title">Night Raid on Shaista Khan</div>
+          <p class="timeline-event-desc">Mughal viceroy Shaista Khan occupies Pune. Chhatrapati Shivaji leads a daring 400-man night raid through a wedding procession into Shaista Khan's bedroom. Khan barely escapes, losing his fingers. Aurangzeb is humiliated.</p>
         </div>
-        <div class="timeline-node">🌙</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">💰</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1664</div>
-          <div class="timeline-event-title">⚓ Sack of Surat</div>
-          <p class="timeline-event-desc">Shivaji storms Surat — the wealthiest Mughal port — looting it to fund the Maratha cause. The English and Dutch factories are spared. The Mughal empire reels. Aurangzeb dispatches his best general: Jai Singh.</p>
+          <div class="timeline-event-title">Sack of Surat</div>
+          <p class="timeline-event-desc">Chhatrapati Shivaji storms Surat — the wealthiest Mughal port — looting it to fund the Maratha cause. The English and Dutch factories are spared. The Mughal empire reels. Aurangzeb dispatches his best general: Jai Singh.</p>
         </div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1666</div>
-          <div class="timeline-event-title">🚪 The Great Escape from Agra!</div>
-          <p class="timeline-event-desc">Summoned to Aurangzeb's court in Agra, Shivaji is placed under house arrest. In the most daring escape of his life, he hides in fruit baskets and flees — a 2,000 km journey back to Maharashtra. The entire Mughal empire searches for him in vain.</p>
+          <div class="timeline-event-title">The Great Escape from Agra!</div>
+          <p class="timeline-event-desc">Summoned to Aurangzeb's court in Agra, Chhatrapati Shivaji is placed under house arrest. In the most daring escape of his life, he hides in fruit baskets and flees — a 2,000 km journey back to Maharashtra. The entire Mughal empire searches for him in vain.</p>
         </div>
-        <div class="timeline-node">🧺</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">⚔️</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1670</div>
-          <div class="timeline-event-title">🔥 Recapture & Second Sack of Surat</div>
-          <p class="timeline-event-desc">Shivaji recaptures most forts lost in the Treaty of Purandar in just 45 days. He sacks Surat a second time, further funding his growing empire. The Maratha navy is rapidly expanding.</p>
+          <div class="timeline-event-title">Recapture & Second Sack of Surat</div>
+          <p class="timeline-event-desc">Chhatrapati Shivaji recaptures most forts lost in the Treaty of Purandar in just 45 days. He sacks Surat a second time, further funding his growing empire. The Maratha navy is rapidly expanding.</p>
         </div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1674</div>
-          <div class="timeline-event-title">👑 CORONATION — Chhatrapati!</div>
-          <p class="timeline-event-desc">On June 6, 1674 at Raigad Fort, Shivaji is crowned Chhatrapati (Emperor) in a grand ceremony performed by Pandit Gagabhatt of Varanasi. Swarajya is officially born. The Maratha Empire stands as a sovereign Hindu kingdom.</p>
+          <div class="timeline-event-title">CORONATION — Chhatrapati!</div>
+          <p class="timeline-event-desc">On June 6, 1674 at Raigad Fort, Chhatrapati Shivaji is crowned Chhatrapati (Emperor) in a grand ceremony performed by Pandit Gagabhatt of Varanasi. Swarajya is officially born. The Maratha Empire stands as a sovereign Hindu kingdom.</p>
         </div>
-        <div class="timeline-node">👑</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-empty"></div>
-        <div class="timeline-node">⚓</div>
+        <div class="timeline-node"></div>
         <div class="timeline-content-right">
           <div class="timeline-year">1674–80</div>
-          <div class="timeline-event-title">🌊 Southern Campaigns</div>
-          <p class="timeline-event-desc">Shivaji launches campaigns into Karnataka and Tamil Nadu. The Battle of Jinji (1677) extends Maratha influence deep into the south. He meets Sambhaji, his son who is to succeed him, and works to consolidate the vast empire.</p>
+          <div class="timeline-event-title">Southern Campaigns</div>
+          <p class="timeline-event-desc">Chhatrapati Shivaji launches campaigns into Karnataka and Tamil Nadu. The Battle of Jinji (1677) extends Maratha influence deep into the south. He meets Sambhaji, his son who is to succeed him, and works to consolidate the vast empire.</p>
         </div>
       </div>
 
       <div class="timeline-item reveal">
         <div class="timeline-content-left">
           <div class="timeline-year">1680</div>
-          <div class="timeline-event-title">🕊️ Departure of the Lion</div>
+          <div class="timeline-event-title">Departure of the Lion</div>
           <p class="timeline-event-desc">On April 3, 1680, Chhatrapati Shivaji Maharaj passed away at Raigad Fort at the age of 50. He left behind a vast empire, a powerful navy, a just administration — and an eternal legacy that inspired all future freedom struggles of India.</p>
         </div>
-        <div class="timeline-node">🕊️</div>
+        <div class="timeline-node"></div>
         <div class="timeline-empty"></div>
       </div>
     </div>
@@ -1255,22 +1388,22 @@
 
     <!-- Animated Battle Scene -->
     <div class="battle-animation-section reveal">
-      <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;margin-bottom:20px;">⚔️ THE MARATHA SPIRIT IN BATTLE</h3>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;margin-bottom:20px;"> THE MARATHA SPIRIT IN BATTLE</h3>
       <div class="swords-animation">
         <div class="warrior warrior-maratha">
-          <div class="warrior-figure">🗡️</div>
+          <div class="warrior-figure"></div>
           <div class="warrior-label">MARATHA WARRIORS</div>
           <div style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--saffron);letter-spacing:1px;text-align:center;">JAY BHAVANI!</div>
         </div>
-        <div class="vs-text">⚡VS⚡</div>
+        <div class="vs-text">VS</div>
         <div class="warrior warrior-enemy">
-          <div class="warrior-figure">🏹</div>
+          <div class="warrior-figure"></div>
           <div class="warrior-label">MUGHAL / BIJAPUR FORCES</div>
           <div style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--text-muted);letter-spacing:1px;text-align:center;">10x Larger Armies</div>
         </div>
       </div>
       <div class="inline-quote" style="max-width:600px;margin:20px auto 0;">
-        "Shivaji never fought a fair battle — he always fought smart battles. Guerrilla warfare, night raids, mountain passes — the land itself was his ally."
+        "Chhatrapati Shivaji never fought a fair battle — he always fought smart battles. Guerrilla warfare, night raids, mountain passes — the land itself was his ally."
       </div>
     </div>
 
@@ -1280,20 +1413,20 @@
       <div class="battle-card reveal">
         <div class="battle-img-wrap">
           <img class="battle-bg"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Battle_of_Pratapgad.jpg/800px-Battle_of_Pratapgad.jpg"
+            src="assets/Pratapgad.png"
             alt="Battle of Pratapgad"
             onerror="this.style.background='linear-gradient(135deg,#3D0008,#1A0A00)'">
           <div class="battle-img-overlay"></div>
           <div class="battle-year-badge">1659</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">⚔ Battle of Pratapgad</div>
+          <div class="battle-name">Battle of Pratapgad</div>
           <div class="battle-meta">
-            <span>📍 Pratapgad Fort</span>
-            <span>⚔ Vs. Bijapur Sultanate</span>
+            <span> Pratapgad Fort</span>
+            <span> Vs. Bijapur Sultanate</span>
           </div>
-          <p class="battle-desc">The most dramatic battle of Shivaji's life. Afzal Khan, a giant Bijapur general, led 10,000 troops to crush Shivaji. In a private meeting, Shivaji killed Afzal Khan with his wagh nakh (tiger claws) hidden under his armor. Maratha forces then ambushed the leaderless Bijapur army. A complete Maratha victory that shocked the entire Deccan.</p>
-          <span class="battle-result victory">✓ DECISIVE VICTORY</span>
+          <p class="battle-desc">The most dramatic battle of Chhatrapati Chhatrapati Shivaji's life. Afzal Khan, a giant Bijapur general, led 10,000 troops to crush Chhatrapati Shivaji. In a private meeting, Chhatrapati Shivaji killed Afzal Khan with his wagh nakh (tiger claws) hidden under his armor. Maratha forces then ambushed the leaderless Bijapur army. A complete Maratha victory that shocked the entire Deccan.</p>
+          <span class="battle-result victory"> DECISIVE VICTORY</span>
         </div>
       </div>
 
@@ -1308,49 +1441,49 @@
           <div class="battle-year-badge">1660</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🏔 Battle of Pavan Khind</div>
+          <div class="battle-name">Battle of Pavan Khind</div>
           <div class="battle-meta">
-            <span>📍 Ghod Khind Pass</span>
-            <span>⚔ Vs. Siddi Masud</span>
+            <span> Ghod Khind Pass</span>
+            <span> Vs. Siddi Masud</span>
           </div>
-          <p class="battle-desc">Surrounded by 10,000 Bijapur soldiers, Shivaji needed to escape to Vishalgad. Brave Baji Prabhu Deshpande volunteered to hold the narrow Ghod Khind pass with just 300 soldiers. He fought until he heard the victory cannon of Vishalgad Fort — then fell. This sacrifice is one of the greatest in Maratha history.</p>
-          <span class="battle-result victory">✓ SHIVAJI ESCAPED SAFELY</span>
+          <p class="battle-desc">Surrounded by 10,000 Bijapur soldiers, Chhatrapati Shivaji needed to escape to Vishalgad. Brave Baji Prabhu Deshpande volunteered to hold the narrow Ghod Khind pass with just 300 soldiers. He fought until he heard the victory cannon of Vishalgad Fort — then fell. This sacrifice is one of the greatest in Maratha history.</p>
+          <span class="battle-result victory"> CHHATRAPATI SHIVAJI ESCAPED SAFELY</span>
         </div>
       </div>
 
       <!-- Battle 3 -->
       <div class="battle-card reveal">
         <div class="battle-img-wrap">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A0500,#3D1000);display:flex;align-items:center;justify-content:center;font-size:5rem;">🌙</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A0500,#3D1000);display:flex;align-items:center;justify-content:center;font-size:5rem;"></div>
           <div class="battle-img-overlay"></div>
           <div class="battle-year-badge">1663</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🌙 Raid on Shaista Khan</div>
+          <div class="battle-name">Raid on Shaista Khan</div>
           <div class="battle-meta">
-            <span>📍 Lal Mahal, Pune</span>
-            <span>⚔ Vs. Mughal Viceroy</span>
+            <span> Lal Mahal, Pune</span>
+            <span> Vs. Mughal Viceroy</span>
           </div>
-          <p class="battle-desc">Mughal viceroy Shaista Khan had occupied Pune. Shivaji led just 400 men disguised as a wedding procession at night. They scaled the walls and attacked the palace. Shaista Khan barely escaped by jumping out a window, losing three fingers. The Mughals were humiliated and Khan was transferred to Bengal in disgrace.</p>
-          <span class="battle-result victory">✓ AUDACIOUS VICTORY</span>
+          <p class="battle-desc">Mughal viceroy Shaista Khan had occupied Pune. Chhatrapati Shivaji led just 400 men disguised as a wedding procession at night. They scaled the walls and attacked the palace. Shaista Khan barely escaped by jumping out a window, losing three fingers. The Mughals were humiliated and Khan was transferred to Bengal in disgrace.</p>
+          <span class="battle-result victory"> AUDACIOUS VICTORY</span>
         </div>
       </div>
 
       <!-- Battle 4 -->
       <div class="battle-card reveal">
         <div class="battle-img-wrap">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#001A3D,#000D26);display:flex;align-items:center;justify-content:center;font-size:5rem;">⚓</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#001A3D,#000D26);display:flex;align-items:center;justify-content:center;font-size:5rem;"></div>
           <div class="battle-img-overlay"></div>
           <div class="battle-year-badge">1664</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">⚓ Sack of Surat (First)</div>
+          <div class="battle-name">Sack of Surat (First)</div>
           <div class="battle-meta">
-            <span>📍 Surat Port</span>
-            <span>⚔ Vs. Mughal Empire</span>
+            <span> Surat Port</span>
+            <span> Vs. Mughal Empire</span>
           </div>
-          <p class="battle-desc">Surat was the richest city in Mughal India and their main port. Shivaji attacked with 4,000 cavalry and looted the city for 4 days, accumulating enormous wealth to fund his campaigns. He deliberately spared the English and Dutch factories, showing diplomatic wisdom. Mughal prestige was severely damaged.</p>
-          <span class="battle-result victory">✓ STRATEGIC VICTORY</span>
+          <p class="battle-desc">Surat was the richest city in Mughal India and their main port. Chhatrapati Shivaji attacked with 4,000 cavalry and looted the city for 4 days, accumulating enormous wealth to fund his campaigns. He deliberately spared the English and Dutch factories, showing diplomatic wisdom. Mughal prestige was severely damaged.</p>
+          <span class="battle-result victory"> STRATEGIC VICTORY</span>
         </div>
       </div>
 
@@ -1365,13 +1498,13 @@
           <div class="battle-year-badge">1659</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🐴 Battle of Kolhapur</div>
+          <div class="battle-name">Battle of Kolhapur</div>
           <div class="battle-meta">
-            <span>📍 Kolhapur Region</span>
-            <span>⚔ Vs. Bijapur Army</span>
+            <span> Kolhapur Region</span>
+            <span> Vs. Bijapur Army</span>
           </div>
-          <p class="battle-desc">After Pratapgad, Bijapur sent another general — Rustam Zaman — with a fresh army. Shivaji met them at Kolhapur and delivered another crushing defeat. The Bijapur cavalry was scattered and the Maratha empire expanded significantly in the southern Deccan. Two decisive victories in a single year sent a clear message to all opponents.</p>
-          <span class="battle-result victory">✓ COMPLETE VICTORY</span>
+          <p class="battle-desc">After Pratapgad, Bijapur sent another general — Rustam Zaman — with a fresh army. Chhatrapati Shivaji met them at Kolhapur and delivered another crushing defeat. The Bijapur cavalry was scattered and the Maratha empire expanded significantly in the southern Deccan. Two decisive victories in a single year sent a clear message to all opponents.</p>
+          <span class="battle-result victory"> COMPLETE VICTORY</span>
         </div>
       </div>
 
@@ -1386,49 +1519,49 @@
           <div class="battle-year-badge">1672</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🏔 Battle of Salher</div>
+          <div class="battle-name">Battle of Salher</div>
           <div class="battle-meta">
-            <span>📍 Salher Fort, Nashik</span>
-            <span>⚔ Vs. Mughal Army</span>
+            <span> Salher Fort, Nashik</span>
+            <span> Vs. Mughal Army</span>
           </div>
-          <p class="battle-desc">The largest open-field battle Shivaji ever fought. Mughal forces laid siege to Salher Fort. Shivaji sent his generals Prataprao Gujar and Moropant Trimbak Pingle who defeated the Mughal army of 40,000 men in an open pitched battle. Over 6,000 Mughal soldiers were killed and thousands captured. One of Maratha history's greatest military triumphs.</p>
-          <span class="battle-result victory">✓ LANDMARK VICTORY</span>
+          <p class="battle-desc">The largest open-field battle Chhatrapati Shivaji ever fought. Mughal forces laid siege to Salher Fort. Chhatrapati Shivaji sent his generals Prataprao Gujar and Moropant Trimbak Pingle who defeated the Mughal army of 40,000 men in an open pitched battle. Over 6,000 Mughal soldiers were killed and thousands captured. One of Maratha history's greatest military triumphs.</p>
+          <span class="battle-result victory"> LANDMARK VICTORY</span>
         </div>
       </div>
 
       <!-- Battle 7 -->
       <div class="battle-card reveal">
         <div class="battle-img-wrap">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A1500,#0D0A00);display:flex;align-items:center;justify-content:center;font-size:5rem;">🏰</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A1500,#0D0A00);display:flex;align-items:center;justify-content:center;font-size:5rem;"></div>
           <div class="battle-img-overlay"></div>
           <div class="battle-year-badge">1665</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🏰 Treaty of Purandar</div>
+          <div class="battle-name">Treaty of Purandar</div>
           <div class="battle-meta">
-            <span>📍 Purandar Fort</span>
-            <span>⚔ Jai Singh I (Mughal)</span>
+            <span> Purandar Fort</span>
+            <span> Jai Singh I (Mughal)</span>
           </div>
-          <p class="battle-desc">Aurangzeb sent Raja Jai Singh of Amber with a massive army. After fierce resistance, Shivaji signed the Treaty of Purandar — surrendering 23 forts and 400,000 hun. A tactical retreat, not a defeat. Shivaji later recaptured all forts within months. He would never surrender his spirit, only bide his time.</p>
-          <span class="battle-result strategic">◈ STRATEGIC RETREAT</span>
+          <p class="battle-desc">Aurangzeb sent Raja Jai Singh of Amber with a massive army. After fierce resistance, Chhatrapati Shivaji signed the Treaty of Purandar — surrendering 23 forts and 400,000 hun. A tactical retreat, not a defeat. Chhatrapati Shivaji later recaptured all forts within months. He would never surrender his spirit, only bide his time.</p>
+          <span class="battle-result strategic"> STRATEGIC RETREAT</span>
         </div>
       </div>
 
       <!-- Battle 8 -->
       <div class="battle-card reveal">
         <div class="battle-img-wrap">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#0D001A,#050008);display:flex;align-items:center;justify-content:center;font-size:5rem;">🧺</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#0D001A,#050008);display:flex;align-items:center;justify-content:center;font-size:5rem;"></div>
           <div class="battle-img-overlay"></div>
           <div class="battle-year-badge">1666</div>
         </div>
         <div class="battle-content">
-          <div class="battle-name">🚀 Escape from Agra</div>
+          <div class="battle-name">Escape from Agra</div>
           <div class="battle-meta">
-            <span>📍 Agra → Raigad</span>
-            <span>⚔ Mughal Empire</span>
+            <span> Agra → Raigad</span>
+            <span> Mughal Empire</span>
           </div>
-          <p class="battle-desc">Invited to Aurangzeb's court in Agra, Shivaji was placed under house arrest. In one of history's most daring escapes, he faked illness and used fruit basket deliveries to smuggle himself out — then traveled 2,000 km back to Maharashtra disguised as a saint. The Mughal empire was humiliated. The return of Shivaji energized all of Maharashtra.</p>
-          <span class="battle-result victory">✓ LEGENDARY ESCAPE</span>
+          <p class="battle-desc">Invited to Aurangzeb's court in Agra, Chhatrapati Shivaji was placed under house arrest. In one of history's most daring escapes, he faked illness and used fruit basket deliveries to smuggle himself out — then traveled 2,000 km back to Maharashtra disguised as a saint. The Mughal empire was humiliated. The return of Chhatrapati Shivaji energized all of Maharashtra.</p>
+          <span class="battle-result victory"> LEGENDARY ESCAPE</span>
         </div>
       </div>
 
@@ -1449,36 +1582,36 @@
     <div class="forts-grid">
       <div class="fort-card reveal">
         <img class="fort-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Raigad_fort.jpg/800px-Raigad_fort.jpg"
+          src="assets/Raigad.png"
           alt="Raigad Fort"
           onerror="this.style.background='#1A0A00'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">👑 Raigad Fort</div>
+          <div class="fort-name">Raigad Fort</div>
           <div class="fort-year">Capital of Maratha Empire</div>
         </div>
       </div>
 
       <div class="fort-card reveal">
         <img class="fort-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Shivneri_Fort.jpg/800px-Shivneri_Fort.jpg"
+          src="assets/Shivneri.png"
           alt="Shivneri Fort"
           onerror="this.style.background='#0D1A00'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">🏰 Shivneri Fort</div>
-          <div class="fort-year">Birthplace of Shivaji — 1630</div>
+          <div class="fort-name">Shivneri Fort</div>
+          <div class="fort-year">Birthplace of Chhatrapati Shivaji — 1630</div>
         </div>
       </div>
 
       <div class="fort-card reveal">
         <img class="fort-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Pratapgad_fort.jpg/800px-Pratapgad_fort.jpg"
+          src="assets/Pratapgad.png"
           alt="Pratapgad Fort"
           onerror="this.style.background='#1A0500'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">⚔ Pratapgad Fort</div>
+          <div class="fort-name">Pratapgad Fort</div>
           <div class="fort-year">Site of Afzal Khan's defeat — 1659</div>
         </div>
       </div>
@@ -1490,7 +1623,7 @@
           onerror="this.style.background='#001A1A'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">⚓ Sindhudurg Fort</div>
+          <div class="fort-name">Sindhudurg Fort</div>
           <div class="fort-year">Sea Fort — Built 1664–67</div>
         </div>
       </div>
@@ -1502,31 +1635,31 @@
           onerror="this.style.background='#0D0D00'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">🏔 Torna Fort</div>
+          <div class="fort-name">Torna Fort</div>
           <div class="fort-year">First Conquest — 1645</div>
         </div>
       </div>
 
       <div class="fort-card reveal">
         <img class="fort-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sinhagad_Fort.jpg/800px-Sinhagad_Fort.jpg"
+          src="assets/Sinhgad.png"
           alt="Sinhagad Fort"
           onerror="this.style.background='#001A0D'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">🦁 Sinhagad Fort</div>
+          <div class="fort-name">Sinhagad Fort</div>
           <div class="fort-year">Tanaji's Sacrifice — 1670</div>
         </div>
       </div>
 
       <div class="fort-card reveal">
         <img class="fort-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rajgad_fort.jpg/800px-Rajgad_fort.jpg"
+          src="assets/Rajgad.png"
           alt="Rajgad Fort"
           onerror="this.style.background='#1A0005'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">🏰 Rajgad Fort</div>
+          <div class="fort-name">Rajgad Fort</div>
           <div class="fort-year">First Capital — 1648–70</div>
         </div>
       </div>
@@ -1538,7 +1671,7 @@
           onerror="this.style.background='#00001A'">
         <div class="fort-overlay"></div>
         <div class="fort-info">
-          <div class="fort-name">⚓ Vijaydurg Fort</div>
+          <div class="fort-name">Vijaydurg Fort</div>
           <div class="fort-year">Naval Headquarters</div>
         </div>
       </div>
@@ -1546,7 +1679,7 @@
 
     <div class="reveal" style="text-align:center;margin-top:40px;">
       <div class="inline-quote" style="max-width:700px;margin:0 auto;">
-        "Shivaji Maharaj maintained over 360 forts — from the Sahyadri mountains to the Konkan coast. Each fort was a symbol of Maratha sovereignty and a bastion of Swarajya."
+        "Chhatrapati Chhatrapati Shivaji Maharaj maintained over 360 forts — from the Sahyadri mountains to the Konkan coast. Each fort was a symbol of Maratha sovereignty and a bastion of Swarajya."
       </div>
     </div>
   </div>
@@ -1564,10 +1697,10 @@
 
     <div class="coronation-main">
       <div class="coronation-facts reveal-left">
-        <div class="maratha-seal">👑</div>
+        <div class="maratha-seal"></div>
 
         <div class="coronation-fact-item">
-          <div class="fact-icon">📅</div>
+          <div class="fact-icon"></div>
           <div class="fact-text">
             <h4>Date of Coronation</h4>
             <p>June 6, 1674 (Jyeshtha Shukla Trayodashi, Ananda Samvatsara) at Raigad Fort. An auspicious day selected by Pandit Gagabhatt of Varanasi after elaborate calculations.</p>
@@ -1575,23 +1708,23 @@
         </div>
 
         <div class="coronation-fact-item">
-          <div class="fact-icon">🏰</div>
+          <div class="fact-icon"></div>
           <div class="fact-text">
             <h4>Location — Raigad Fort</h4>
-            <p>Raigad (also called Rairi) became the new capital. Perched 820 meters above sea level, it was an impregnable mountain fortress overlooking the Konkan. Shivaji himself designed the city of Pachad at its base.</p>
+            <p>Raigad (also called Rairi) became the new capital. Perched 820 meters above sea level, it was an impregnable mountain fortress overlooking the Konkan. Chhatrapati Shivaji himself designed the city of Pachad at its base.</p>
           </div>
         </div>
 
         <div class="coronation-fact-item">
-          <div class="fact-icon">🙏</div>
+          <div class="fact-icon"></div>
           <div class="fact-text">
             <h4>The Ceremony</h4>
-            <p>Pandit Gagabhatt performed the Vedic coronation rituals. Shivaji was anointed with holy waters from all the sacred rivers of India. He was crowned with a gem-studded crown and given the titles <em>Chhatrapati, Shakakarta, Kshatriya Kulavantas, Haindava Dharmoddhaarak</em>.</p>
+            <p>Pandit Gagabhatt performed the Vedic coronation rituals. Chhatrapati Shivaji was anointed with holy waters from all the sacred rivers of India. He was crowned with a gem-studded crown and given the titles <em>Chhatrapati, Shakakarta, Kshatriya Kulavantas, Haindava Dharmoddhaarak</em>.</p>
           </div>
         </div>
 
         <div class="coronation-fact-item">
-          <div class="fact-icon">🌍</div>
+          <div class="fact-icon"></div>
           <div class="fact-text">
             <h4>Historic Significance</h4>
             <p>After over 300 years of Muslim sultanate rule, a Hindu Maratha king sat on a sovereign throne. 50,000+ people attended. It wasn't just a coronation — it was the rebirth of a civilization's pride. Even the English East India Company sent envoys.</p>
@@ -1602,7 +1735,7 @@
       <div class="reveal-right">
         <div class="coronation-quote-bg">
           <p class="coronation-quote-text">
-            "Shivaji's coronation was not merely a political event — it was a renaissance. For a people crushed under centuries of foreign rule, it was the moment they dared to believe again. The lion had not just conquered territory; he had conquered the imagination of an entire civilization."
+            "Chhatrapati Chhatrapati Shivaji's coronation was not merely a political event — it was a renaissance. For a people crushed under centuries of foreign rule, it was the moment they dared to believe again. The lion had not just conquered territory; he had conquered the imagination of an entire civilization."
           </p>
           <div class="coronation-quote-author">— Historical Analysis of the Maratha Renaissance</div>
         </div>
@@ -1629,10 +1762,10 @@
         <div style="margin-top:20px;background:rgba(255,107,0,0.05);border:1px solid rgba(255,107,0,0.2);padding:25px;">
           <h4 style="font-family:'Cinzel',serif;color:var(--saffron);font-size:0.8rem;letter-spacing:2px;margin-bottom:12px;">ROYAL TITLES BESTOWED</h4>
           <p style="font-family:'EB Garamond',serif;font-size:1rem;color:var(--text-muted);line-height:1.8;">
-            🔸 <strong style="color:var(--cream)">Chhatrapati</strong> — Lord of the Parasol (Emperor)<br>
-            🔸 <strong style="color:var(--cream)">Shakakarta</strong> — Creator of a New Era<br>
-            🔸 <strong style="color:var(--cream)">Kshatriya Kulavantas</strong> — Head of the Kshatriya Clan<br>
-            🔸 <strong style="color:var(--cream)">Haindava Dharmoddhaarak</strong> — Protector of Hindu Dharma
+             <strong style="color:var(--cream)">Chhatrapati</strong> — Lord of the Parasol (Emperor)<br>
+             <strong style="color:var(--cream)">Shakakarta</strong> — Creator of a New Era<br>
+             <strong style="color:var(--cream)">Kshatriya Kulavantas</strong> — Head of the Kshatriya Clan<br>
+             <strong style="color:var(--cream)">Haindava Dharmoddhaarak</strong> — Protector of Hindu Dharma
           </p>
         </div>
       </div>
@@ -1652,39 +1785,39 @@
 
     <div class="achievements-grid">
       <div class="achievement-card reveal">
-        <span class="achievement-icon">⚓</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Father of the Indian Navy</div>
-        <p class="achievement-desc">Shivaji was the first Indian ruler to build and maintain a powerful naval force. His Maratha Navy had over 200 warships — Ghurabs and Gallivats — patrolling the Konkan coast. He built sea forts like Sindhudurg, Vijaydurg, and Jaigad. He is officially recognized as the "Father of the Indian Navy."</p>
+        <p class="achievement-desc">Chhatrapati Shivaji was the first Indian ruler to build and maintain a powerful naval force. His Maratha Navy had over 200 warships — Ghurabs and Gallivats — patrolling the Konkan coast. He built sea forts like Sindhudurg, Vijaydurg, and Jaigad. He is officially recognized as the "Father of the Indian Navy."</p>
       </div>
 
       <div class="achievement-card reveal">
-        <span class="achievement-icon">⚖️</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Just & Secular Governance</div>
-        <p class="achievement-desc">Shivaji ran a remarkably just administration. He treated all religions with equal respect — many Muslims served in high positions in his army and court. He never allowed desecration of mosques or temples in conquered territories. He treated captured women with utmost dignity — even when his own soldiers found royal women of enemy kings, he returned them with honor.</p>
+        <p class="achievement-desc">Chhatrapati Shivaji ran a remarkably just administration. He treated all religions with equal respect — many Muslims served in high positions in his army and court. He never allowed desecration of mosques or temples in conquered territories. He treated captured women with utmost dignity — even when his own soldiers found royal women of enemy kings, he returned them with honor.</p>
       </div>
 
       <div class="achievement-card reveal">
-        <span class="achievement-icon">📜</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Ashtapradhan Mandal</div>
-        <p class="achievement-desc">Shivaji created the Ashtapradhan (council of eight ministers) system — an unprecedented administrative structure. Each minister had a specific portfolio: Peshwa (PM), Amatya (Finance), Mantri (Records), Senapati (Military), Nyayadhish (Justice), Panditrao (Religious), Sachiv (Correspondence), and Shumantra (Foreign Affairs).</p>
+        <p class="achievement-desc">Chhatrapati Shivaji created the Ashtapradhan (council of eight ministers) system — an unprecedented administrative structure. Each minister had a specific portfolio: Peshwa (PM), Amatya (Finance), Mantri (Records), Senapati (Military), Nyayadhish (Justice), Panditrao (Religious), Sachiv (Correspondence), and Shumantra (Foreign Affairs).</p>
       </div>
 
       <div class="achievement-card reveal">
-        <span class="achievement-icon">💰</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Revenue Reform (Ryotwari)</div>
-        <p class="achievement-desc">Shivaji abolished the Jagirdari system. He introduced direct revenue collection from farmers (Ryotwari) — eliminating the exploitative middlemen. He measured land using a standardized unit (the kathi) and fixed fair taxes. He forgave revenue during famines and provided farmers with seeds, loans, and animals to rebuild.</p>
+        <p class="achievement-desc">Chhatrapati Shivaji abolished the Jagirdari system. He introduced direct revenue collection from farmers (Ryotwari) — eliminating the exploitative middlemen. He measured land using a standardized unit (the kathi) and fixed fair taxes. He forgave revenue during famines and provided farmers with seeds, loans, and animals to rebuild.</p>
       </div>
 
       <div class="achievement-card reveal">
-        <span class="achievement-icon">🛡️</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Guerrilla Warfare Pioneer</div>
-        <p class="achievement-desc">Shivaji perfected Ganimi Kava (guerrilla warfare) — using the Sahyadri mountains, jungles, and narrow passes to defeat much larger armies. He trained small, swift cavalry units (Mavale) who could strike and disappear like lightning. His tactics were so advanced, they are still studied in modern military academies worldwide.</p>
+        <p class="achievement-desc">Chhatrapati Shivaji perfected Ganimi Kava (guerrilla warfare) — using the Sahyadri mountains, jungles, and narrow passes to defeat much larger armies. He trained small, swift cavalry units (Mavale) who could strike and disappear like lightning. His tactics were so advanced, they are still studied in modern military academies worldwide.</p>
       </div>
 
       <div class="achievement-card reveal">
-        <span class="achievement-icon">🌿</span>
+        <span class="achievement-icon"></span>
         <div class="achievement-title">Language & Culture</div>
-        <p class="achievement-desc">Shivaji replaced Persian with Marathi and Sanskrit as the official languages of his court. He created a Sanskrit-based dictionary of administrative terms called "Rajyavyavahar Kosh." He was a deep scholar of the Vedas, and commissioned the construction of many temples. He championed Marathi identity at a time when it was being suppressed.</p>
+        <p class="achievement-desc">Chhatrapati Shivaji replaced Persian with Marathi and Sanskrit as the official languages of his court. He created a Sanskrit-based dictionary of administrative terms called "Rajyavyavahar Kosh." He was a deep scholar of the Vedas, and commissioned the construction of many temples. He championed Marathi identity at a time when it was being suppressed.</p>
       </div>
     </div>
   </div>
@@ -1704,10 +1837,10 @@
       <div class="video-wrap reveal">
         <iframe class="video-frame"
           src="https://www.youtube.com/embed/0GqbPeFmNJI"
-          title="Shivaji Maharaj Full History"
+          title="Chhatrapati Chhatrapati Shivaji Maharaj Full History"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen loading="lazy"></iframe>
-        <div class="video-title">📜 Chhatrapati Shivaji Maharaj — Complete History</div>
+        <div class="video-title">Chhatrapati Shivaji Maharaj — Complete History</div>
       </div>
 
       <div class="video-wrap reveal">
@@ -1716,25 +1849,25 @@
           title="Battle of Pratapgad"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen loading="lazy"></iframe>
-        <div class="video-title">⚔ Battle of Pratapgad — Afzal Khan's Defeat</div>
+        <div class="video-title">Battle of Pratapgad — Afzal Khan's Defeat</div>
       </div>
 
       <div class="video-wrap reveal">
         <iframe class="video-frame"
           src="https://www.youtube.com/embed/BqDqnSsPEhU"
-          title="Shivaji Coronation"
+          title="Chhatrapati Shivaji Coronation"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen loading="lazy"></iframe>
-        <div class="video-title">👑 The Coronation of Chhatrapati Shivaji Maharaj</div>
+        <div class="video-title">The Coronation of Chhatrapati Shivaji Maharaj</div>
       </div>
 
       <div class="video-wrap reveal">
         <iframe class="video-frame"
           src="https://www.youtube.com/embed/ydXbBVWqxgg"
-          title="Shivaji Escape from Agra"
+          title="Chhatrapati Shivaji Escape from Agra"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen loading="lazy"></iframe>
-        <div class="video-title">🧺 The Daring Escape from Aurangzeb's Agra</div>
+        <div class="video-title">The Daring Escape from Aurangzeb's Agra</div>
       </div>
     </div>
   </div>
@@ -1752,10 +1885,10 @@
 
     <div class="passing-content">
       <div class="passing-text reveal-left">
-        <h3>🕊️ DEPARTURE OF THE CHHATRAPATI</h3>
-        <p>In late March 1680, Shivaji Maharaj fell seriously ill at Raigad Fort. He had been suffering from fever and dysentery for several weeks. On <strong style="color:var(--gold)">April 3, 1680</strong>, at the age of 50, the great Chhatrapati breathed his last.</p>
+        <h3>DEPARTURE OF THE CHHATRAPATI</h3>
+        <p>In late March 1680, Chhatrapati Chhatrapati Shivaji Maharaj fell seriously ill at Raigad Fort. He had been suffering from fever and dysentery for several weeks. On <strong style="color:var(--gold)">April 3, 1680</strong>, at the age of 50, the great Chhatrapati breathed his last.</p>
         <p>His death plunged Maharashtra into grief. Fifty years of tireless struggle — founding a kingdom from nothing, fighting the greatest empires of his time, building institutions that would outlast him — had taken their toll. Yet the Maratha Empire he built would survive and grow for over 150 years after his passing.</p>
-        <p>Shivaji was cremated at Raigad Fort. His samadhi (memorial) stands there to this day, visited by millions every year. His son <strong style="color:var(--gold)">Sambhaji Maharaj</strong> succeeded him and continued the struggle against the Mughals.</p>
+        <p>Chhatrapati Shivaji was cremated at Raigad Fort. His samadhi (memorial) stands there to this day, visited by millions every year. His son <strong style="color:var(--gold)">Sambhaji Maharaj</strong> succeeded him and continued the struggle against the Mughals.</p>
         <div class="inline-quote">
           "He did not just build a kingdom — he rebuilt a civilization. He proved that no empire is too powerful to challenge when a people have the will to be free."
         </div>
@@ -1763,7 +1896,7 @@
 
       <div class="reveal-right">
         <div class="memorial-box">
-          <h3>📊 The Shivaji Maharaj Legacy in Numbers</h3>
+          <h3>The Chhatrapati Chhatrapati Shivaji Maharaj Legacy in Numbers</h3>
           <div class="memorial-stat">
             <span class="memorial-stat-key">Born</span>
             <span class="memorial-stat-val">19 February 1630, Shivneri Fort</span>
@@ -1822,7 +1955,7 @@
 
     <div class="legacy-content reveal">
       <div class="legacy-quote">
-        <p class="legacy-quote-text">"Shivaji was one of the greatest national figures India has ever produced. He was a born leader of men, a reformer, and a great ruler. His personal courage was remarkable."</p>
+        <p class="legacy-quote-text">"Chhatrapati Shivaji was one of the greatest national figures India has ever produced. He was a born leader of men, a reformer, and a great ruler. His personal courage was remarkable."</p>
         <div class="legacy-quote-source">— Jawaharlal Nehru, First Prime Minister of India</div>
       </div>
 
@@ -1831,11 +1964,11 @@
       <p class="legacy-para">He was not merely a warrior — he was a statesman, an administrator, a naval strategist, a linguist, and a philosopher of governance. His Ashtapradhan system, his revenue reforms, his treatment of women and prisoners of war, his respect for all religions — these were centuries ahead of their time.</p>
 
       <div class="legacy-quote" style="border-left-color:var(--gold);border-right-color:var(--saffron);">
-        <p class="legacy-quote-text">"The life of Shivaji has been a source of inspiration to countless generations of Indians. He showed that it is possible to combine military genius with political wisdom, and personal bravery with administrative skill."</p>
+        <p class="legacy-quote-text">"The life of Chhatrapati Shivaji has been a source of inspiration to countless generations of Indians. He showed that it is possible to combine military genius with political wisdom, and personal bravery with administrative skill."</p>
         <div class="legacy-quote-source">— Bal Gangadhar Tilak, Father of Indian Nationalism</div>
       </div>
 
-      <p class="legacy-para">Bal Gangadhar Tilak revived the tradition of Shiv Jayanti (Shivaji's birthday celebration) in 1893 to use it as a unifying force for the Indian independence movement. Mahatma Gandhi, Subhas Chandra Bose, and countless freedom fighters drew inspiration from Shivaji's example. Today, the Indian Navy's motto — <em style="color:var(--saffron)">"Sha No Varuna"</em> — carries forward the naval tradition Shivaji began.</p>
+      <p class="legacy-para">Bal Gangadhar Tilak revived the tradition of Shiv Jayanti (Chhatrapati Chhatrapati Shivaji's birthday celebration) in 1893 to use it as a unifying force for the Indian independence movement. Mahatma Gandhi, Subhas Chandra Bose, and countless freedom fighters drew inspiration from Chhatrapati Chhatrapati Shivaji's example. Today, the Indian Navy's motto — <em style="color:var(--saffron)">"Sha No Varuna"</em> — carries forward the naval tradition Chhatrapati Shivaji began.</p>
 
       <div style="background:linear-gradient(135deg,rgba(255,107,0,0.08),rgba(212,160,23,0.08));border:1px solid rgba(212,160,23,0.2);padding:50px;margin-top:40px;">
         <h3 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:1.5rem;text-align:center;margin-bottom:30px;">जय भवानी! जय शिवाजी!</h3>
@@ -1847,13 +1980,49 @@
   </div>
 </section>
 
+<!-- GUESTBOOK -->
+<section id="guestbook">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-label">Fullstack</span>
+      <h2 class="section-title">Visitor Guestbook</h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Messages are saved through the Node backend and loaded back from the API</p>
+    </div>
+
+    <div class="guestbook-shell reveal">
+      <div class="api-panel">
+        <h3>Live API Data</h3>
+        <ul class="api-list">
+          <li><strong>Title</strong><span id="apiTitle">Loading...</span></li>
+          <li><strong>Years</strong><span id="apiYears">Loading...</span></li>
+          <li><strong>Chapters</strong><span id="apiChapters">Loading...</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="guestbook-form" id="guestbookForm">
+          <h3>Leave a Tribute</h3>
+          <div class="guestbook-fields">
+            <input id="guestName" name="name" type="text" maxlength="60" placeholder="Your name" required>
+            <textarea id="guestMessage" name="message" maxlength="240" placeholder="Your message" required></textarea>
+            <button type="submit">Post Message</button>
+            <p class="guestbook-status" id="guestbookStatus"></p>
+          </div>
+        </form>
+        <div class="guestbook-list" id="guestbookList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
-  <span class="footer-emblem">⚔️</span>
+  <span class="footer-emblem"></span>
   <div class="footer-title">Chhatrapati Shivaji Maharaj</div>
   <div class="footer-sub">1630 — 1680 · Maratha Empire</div>
   <div class="footer-slogan">
-    "जय भवानी! जय शिवाजी!" — Victory to the Goddess! Victory to Shivaji!
+    "जय भवानी! जय शिवाजी!" — Victory to the Goddess! Victory to Chhatrapati Shivaji!
   </div>
   <div class="footer-links">
     <a href="#hero">Home</a>
@@ -1865,6 +2034,7 @@
     <a href="#achievements">Achievements</a>
     <a href="#videos">Videos</a>
     <a href="#legacy">Legacy</a>
+    <a href="#guestbook">Guestbook</a>
   </div>
   <div class="footer-copy">
     A tribute to the greatest warrior-king of Maharashtra · Built with reverence and pride
@@ -1944,6 +2114,91 @@
       nav.style.background = 'linear-gradient(180deg,rgba(13,5,0,0.98) 0%,rgba(13,5,0,0) 100%)';
       nav.style.borderBottom = '1px solid rgba(212,160,23,0.15)';
     }
+  });
+
+  // Fullstack API integration
+  const apiTitle = document.getElementById('apiTitle');
+  const apiYears = document.getElementById('apiYears');
+  const apiChapters = document.getElementById('apiChapters');
+  const guestbookForm = document.getElementById('guestbookForm');
+  const guestbookList = document.getElementById('guestbookList');
+  const guestbookStatus = document.getElementById('guestbookStatus');
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }[char]));
+  }
+
+  function formatDate(value) {
+    return new Intl.DateTimeFormat('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    }).format(new Date(value));
+  }
+
+  async function loadSiteInfo() {
+    const response = await fetch('/api/site');
+    const data = await response.json();
+    apiTitle.textContent = data.title;
+    apiYears.textContent = data.years;
+    apiChapters.textContent = data.chapters.length;
+  }
+
+  async function loadGuestbook() {
+    const response = await fetch('/api/guestbook');
+    const entries = await response.json();
+    guestbookList.innerHTML = entries.map((entry) => `
+      <article class="guestbook-entry">
+        <div class="guestbook-entry-head">
+          <span>${escapeHtml(entry.name)}</span>
+          <time datetime="${entry.createdAt}">${formatDate(entry.createdAt)}</time>
+        </div>
+        <p>${escapeHtml(entry.message)}</p>
+      </article>
+    `).join('');
+  }
+
+  guestbookForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    guestbookStatus.textContent = 'Saving...';
+
+    const formData = new FormData(guestbookForm);
+    const payload = {
+      name: formData.get('name'),
+      message: formData.get('message')
+    };
+
+    const response = await fetch('/api/guestbook', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      guestbookStatus.textContent = error.error || 'Could not save your message.';
+      return;
+    }
+
+    guestbookForm.reset();
+    guestbookStatus.textContent = 'Message saved.';
+    await loadGuestbook();
+  });
+
+  loadSiteInfo().catch(() => {
+    apiTitle.textContent = 'API unavailable';
+    apiYears.textContent = '-';
+    apiChapters.textContent = '-';
+  });
+
+  loadGuestbook().catch(() => {
+    guestbookStatus.textContent = 'Guestbook API is unavailable.';
   });
 
   // Hover effect on links
