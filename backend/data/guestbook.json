@@ -1,8 +1,22 @@
 [
   {
+    "id": "99f01f0a-f82e-44fc-8eec-a0897a994ce3",
+    "name": "Test Fan",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "message": "Jay Bhavani Jay Shivaji",
+    "likes": 1,
+    "status": "visible",
+    "createdAt": "2026-05-09T13:08:35.065Z"
+  },
+  {
     "id": "seed-entry",
     "name": "Visitor",
+    "city": "Maharashtra",
+    "state": "India",
     "message": "Jay Bhavani! Jay Shivaji!",
+    "likes": 0,
+    "status": "visible",
     "createdAt": "2026-05-05T00:00:00.000Z"
   }
 ]

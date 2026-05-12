@@ -5,7 +5,8 @@ const { randomUUID } = require('node:crypto');
 
 const PORT = Number(process.env.PORT || 3000);
 const ROOT = path.resolve(__dirname, '..');
-const FRONTEND_DIR = path.join(ROOT, 'frontend');
+const FRONTEND_DIR = path.join(ROOT, 'frontend', 'dist');
+const FALLBACK_FRONTEND_DIR = path.join(ROOT, 'frontend');
 const DATA_DIR = path.join(__dirname, 'data');
 const GUESTBOOK_FILE = path.join(DATA_DIR, 'guestbook.json');
 
@@ -94,7 +95,23 @@ async function handleApi(req, res, url) {
 
   if (url.pathname === '/api/guestbook' && req.method === 'GET') {
     const entries = await readGuestbook();
-    sendJson(res, 200, entries.slice(0, 20));
+    sendJson(res, 200, entries.filter((entry) => entry.status !== 'hidden').slice(0, 50));
+    return;
+  }
+
+  const likeMatch = url.pathname.match(/^\/api\/guestbook\/([^/]+)\/like$/);
+  if (likeMatch && req.method === 'POST') {
+    const entries = await readGuestbook();
+    const entry = entries.find((item) => item.id === likeMatch[1]);
+
+    if (!entry) {
+      sendError(res, 404, 'Tribute not found.');
+      return;
+    }
+
+    entry.likes = Number(entry.likes || 0) + 1;
+    await writeGuestbook(entries);
+    sendJson(res, 200, entry);
     return;
   }
 
@@ -108,6 +125,8 @@ async function handleApi(req, res, url) {
     }
 
     const name = sanitizeText(body.name, 60);
+    const city = sanitizeText(body.city, 50);
+    const state = sanitizeText(body.state, 50);
     const message = sanitizeText(body.message, 240);
 
     if (!name || !message) {
@@ -119,7 +138,11 @@ async function handleApi(req, res, url) {
     const entry = {
       id: randomUUID(),
       name,
+      city,
+      state,
       message,
+      likes: 0,
+      status: 'visible',
       createdAt: new Date().toISOString()
     };
 
@@ -133,10 +156,11 @@ async function handleApi(req, res, url) {
 }
 
 async function serveStatic(req, res, url) {
+  const staticDir = await fs.access(FRONTEND_DIR).then(() => FRONTEND_DIR).catch(() => FALLBACK_FRONTEND_DIR);
   const requestedPath = url.pathname === '/' ? '/index.html' : decodeURIComponent(url.pathname);
-  const filePath = path.normalize(path.join(FRONTEND_DIR, requestedPath));
+  const filePath = path.normalize(path.join(staticDir, requestedPath));
 
-  if (!filePath.startsWith(FRONTEND_DIR)) {
+  if (!filePath.startsWith(staticDir)) {
     sendError(res, 403, 'Forbidden');
     return;
   }
@@ -150,7 +174,7 @@ async function serveStatic(req, res, url) {
     res.end(file);
   } catch (error) {
     if (error.code === 'ENOENT') {
-      const fallback = await fs.readFile(path.join(FRONTEND_DIR, 'index.html'));
+      const fallback = await fs.readFile(path.join(staticDir, 'index.html'));
       res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(fallback);
       return;
