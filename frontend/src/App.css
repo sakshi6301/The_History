@@ -608,19 +608,6 @@
     font-size: 0.7rem; letter-spacing: 2px; color: var(--saffron);
   }
 
-  .fort-visit-time {
-    width: fit-content;
-    margin-top: 8px;
-    padding: 6px 9px;
-    background: rgba(13,5,0,0.62);
-    border: 1px solid rgba(245,200,66,0.3);
-    color: var(--gold-light);
-    font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
   /* CORONATION */
   #coronation {
     background: linear-gradient(180deg, var(--dark) 0%, #200A00 50%, var(--dark) 100%);

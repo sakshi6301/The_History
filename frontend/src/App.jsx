@@ -43,41 +43,9 @@ const pageMarkup = legacyMarkup
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Vijaydurg_fort.jpg/800px-Vijaydurg_fort.jpg',
     'assets/Screenshot 2026-05-05 235838.png',
   )
-  .replace(
-    '<div class="fort-year">Capital of Maratha Empire</div>',
-    '<div class="fort-year">Capital of Maratha Empire</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">Birthplace of Chhatrapati Shivaji — 1630</div>',
-    '<div class="fort-year">Birthplace of Chhatrapati Shivaji — 1630</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">Site of Afzal Khan\'s defeat — 1659</div>',
-    '<div class="fort-year">Site of Afzal Khan\'s defeat — 1659</div><div class="fort-visit-time">Best time: Sep to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">Sea Fort — Built 1664–67</div>',
-    '<div class="fort-year">Sea Fort — Built 1664–67</div><div class="fort-visit-time">Best time: Nov to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">First Conquest — 1645</div>',
-    '<div class="fort-year">First Conquest — 1645</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">Tanaji\'s Sacrifice — 1670</div>',
-    '<div class="fort-year">Tanaji\'s Sacrifice — 1670</div><div class="fort-visit-time">Best time: Jun to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">First Capital — 1648–70</div>',
-    '<div class="fort-year">First Capital — 1648–70</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
-  )
-  .replace(
-    '<div class="fort-year">Naval Headquarters</div>',
-    '<div class="fort-year">Naval Headquarters</div><div class="fort-visit-time">Best time: Nov to Feb</div>',
-  )
   .replaceAll(
     '<a href="#guestbook">Guestbook</a>',
-    '<a href="#fan-experience">Fan Tools</a><a href="#fort-visit-guide">Visit Guide</a><a href="#festival-mode">Festival</a><a href="#book">Book</a><a href="#guestbook">Guestbook</a>',
+    '<a href="#fan-experience">Fan Tools</a><a href="#fort-visit-guide">Visit Guide</a><a href="#festival-mode">Festival</a><a href="#book">Book</a><a href="#guestbook">Guestbook</a><a href="#admin-feedback">Admin</a>',
   );
 
 const [beforeGuestbook, afterGuestbook] = pageMarkup.split('<!-- GUESTBOOK -->');
@@ -116,6 +84,8 @@ const forts = [
     importance: 'Capital of the Maratha Empire and the site of Chhatrapati Shivaji Maharaj\'s coronation in 1674.',
     bestTime: 'October to March',
     travelTip: 'Cooler weather is better for the climb, ropeway ride and exploring the plateau comfortably.',
+    howToReach: 'Reach Pachad village from Mahad, then use the ropeway or climb the fort steps to the top.',
+    trekDifficulty: 'Moderate by steps; easy if using ropeway',
     specialVisits: ['Coronation throne area', 'Jagdishwar Temple', 'Hirakani Buruj', 'Raigad Ropeway views'],
   },
   {
@@ -127,6 +97,8 @@ const forts = [
     importance: 'Birthplace of Chhatrapati Shivaji Maharaj, where Jijabai shaped his early values and vision.',
     bestTime: 'October to February',
     travelTip: 'Winter mornings are pleasant for the trek, caves and birthplace visit.',
+    howToReach: 'Travel to Junnar from Pune, then take the road toward Shivneri base and climb through the fort gates.',
+    trekDifficulty: 'Easy to moderate',
     specialVisits: ['Birthplace memorial', 'Shivai Devi Temple', 'Seven gates route', 'Water tanks and caves'],
   },
   {
@@ -138,6 +110,8 @@ const forts = [
     importance: 'Known for the 1659 encounter with Afzal Khan and the decisive Maratha victory that followed.',
     bestTime: 'September to February',
     travelTip: 'Post-monsoon greenery and winter weather make the Mahabaleshwar route scenic.',
+    howToReach: 'Drive from Mahabaleshwar or Satara toward Pratapgad; the final approach reaches close to the fort base.',
+    trekDifficulty: 'Easy to moderate',
     specialVisits: ['Afzal Khan encounter site', 'Bhavani Temple', 'Upper fort viewpoint', 'Mahabaleshwar valley views'],
   },
   {
@@ -149,6 +123,8 @@ const forts = [
     importance: 'One of the first forts captured by Shivaji Maharaj as a young leader, marking the rise of Swarajya.',
     bestTime: 'October to February',
     travelTip: 'The trek is long, so start early and avoid heavy monsoon days.',
+    howToReach: 'Reach Velhe village from Pune; the main trekking route starts from the village side.',
+    trekDifficulty: 'Difficult and long',
     specialVisits: ['Zunjar Machi', 'Budhla Machi', 'Menghai Devi Temple', 'Sahyadri ridge views'],
   },
   {
@@ -160,6 +136,8 @@ const forts = [
     importance: 'Remembered for Tanaji Malusare\'s sacrifice and the 1670 battle that restored the fort to Swarajya.',
     bestTime: 'June to February',
     travelTip: 'Monsoon is lush and dramatic, while winter is easier for family visits.',
+    howToReach: 'Drive from Pune toward Sinhagad Ghat Road; vehicles usually reach near the upper parking area.',
+    trekDifficulty: 'Easy by road; moderate if trekking',
     specialVisits: ['Tanaji Malusare memorial', 'Kalyan Darwaza', 'Pune valley views', 'Pithla-bhakri food stalls'],
   },
   {
@@ -171,6 +149,8 @@ const forts = [
     importance: 'An early capital of Swarajya and one of the most important hill forts in Shivaji Maharaj\'s life.',
     bestTime: 'October to February',
     travelTip: 'Plan a full day because the fort is large and the trek takes time.',
+    howToReach: 'Reach Gunjavane or Pali village from Pune; both routes lead toward the fort with different trek paths.',
+    trekDifficulty: 'Moderate to difficult',
     specialVisits: ['Padmavati Machi', 'Sanjivani Machi', 'Suvela Machi', 'Balekilla climb'],
   },
   {
@@ -182,6 +162,8 @@ const forts = [
     importance: 'A major sea fort showing the naval vision and coastal defense strategy of the Maratha state.',
     bestTime: 'October to March',
     travelTip: 'Dry winter weather is best for boat access and coastal sightseeing.',
+    howToReach: 'Reach Malvan by road, then take a local boat from the jetty to enter the sea fort.',
+    trekDifficulty: 'Easy; boat access required',
     specialVisits: ['Arabian Sea ramparts', 'Shivaji Maharaj temple', 'Malvan boat ride', 'Snorkeling and scuba nearby'],
   },
   {
@@ -193,6 +175,8 @@ const forts = [
     importance: 'A strategic naval stronghold on the western coast, linked with Maratha maritime power.',
     bestTime: 'November to February',
     travelTip: 'Visit in the dry season for clearer sea views and easier coastal travel.',
+    howToReach: 'Travel by road to Vijaydurg village in Sindhudurg; the fort entrance is close to the coast.',
+    trekDifficulty: 'Easy',
     specialVisits: ['Sea-facing bastions', 'Historic dock area', 'Creek views', 'Coastal sunset points'],
   },
 ];
@@ -711,6 +695,16 @@ function FanExperience() {
                     <strong>Best time to visit</strong>
                     <span>{fort.bestTime}</span>
                   </div>
+                  <div className="route-difficulty-grid">
+                    <div>
+                      <strong>How to reach</strong>
+                      <span>{fort.howToReach}</span>
+                    </div>
+                    <div>
+                      <strong>Trek difficulty</strong>
+                      <span>{fort.trekDifficulty}</span>
+                    </div>
+                  </div>
                   <p>{fort.travelTip}</p>
                   <h4>What is special to visit</h4>
                   <ul>
@@ -1029,6 +1023,127 @@ function TributeWall() {
   );
 }
 
+function AdminFeedbackView() {
+  const [bookMessages, setBookMessages] = useState([]);
+  const [visitorMessages, setVisitorMessages] = useState([]);
+  const [status, setStatus] = useState('Loading messages...');
+
+  async function loadAdminMessages() {
+    const [bookResponse, visitorResponse] = await Promise.all([
+      fetch('/api/book-feedback'),
+      fetch('/api/guestbook'),
+    ]);
+
+    if (!bookResponse.ok || !visitorResponse.ok) {
+      throw new Error('Could not load feedback.');
+    }
+
+    const [bookData, visitorData] = await Promise.all([
+      bookResponse.json(),
+      visitorResponse.json(),
+    ]);
+
+    setBookMessages(bookData);
+    setVisitorMessages(visitorData);
+    setStatus('');
+  }
+
+  useEffect(() => {
+    loadAdminMessages().catch(() => setStatus('Admin feedback API is unavailable.'));
+  }, []);
+
+  function formatDate(value) {
+    if (!value) return 'No date';
+    return new Intl.DateTimeFormat('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).format(new Date(value));
+  }
+
+  return (
+    <section id="admin-feedback" className="admin-feedback">
+      <div className="section-container">
+        <div className="section-header reveal visible">
+          <span className="section-label">Admin View</span>
+          <h2 className="section-title">Feedback Dashboard</h2>
+          <div className="section-divider"></div>
+          <p className="section-desc">
+            A neat view of book feedback and visitor tribute messages collected from the site.
+          </p>
+        </div>
+
+        <div className="admin-summary-grid">
+          <article>
+            <span>Book feedback</span>
+            <strong>{bookMessages.length}</strong>
+          </article>
+          <article>
+            <span>Visitor messages</span>
+            <strong>{visitorMessages.length}</strong>
+          </article>
+          <button type="button" onClick={() => loadAdminMessages().catch(() => setStatus('Could not refresh messages.'))}>
+            Refresh
+          </button>
+        </div>
+        {status && <p className="admin-status">{status}</p>}
+
+        <div className="admin-feedback-layout">
+          <div className="admin-panel">
+            <div className="admin-panel-head">
+              <span className="tool-kicker">Book</span>
+              <h3>Reader Feedback</h3>
+            </div>
+            <div className="admin-message-list">
+              {bookMessages.length === 0 && <p className="empty-admin-message">No book feedback yet.</p>}
+              {bookMessages.map((entry) => (
+                <article className="admin-message-card" key={entry.id}>
+                  <div className="admin-message-meta">
+                    <strong>{entry.name}</strong>
+                    <time dateTime={entry.createdAt}>{formatDate(entry.createdAt)}</time>
+                  </div>
+                  <div className="admin-tags">
+                    <span>{entry.feedbackType}</span>
+                    <span>{entry.rating}/5</span>
+                    {entry.chapter && <span>{entry.chapter}</span>}
+                  </div>
+                  {entry.email && <small>{entry.email}</small>}
+                  <p>{entry.message}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="admin-panel">
+            <div className="admin-panel-head">
+              <span className="tool-kicker">Community</span>
+              <h3>Visitor Tribute Messages</h3>
+            </div>
+            <div className="admin-message-list">
+              {visitorMessages.length === 0 && <p className="empty-admin-message">No visitor messages yet.</p>}
+              {visitorMessages.map((entry) => (
+                <article className="admin-message-card" key={entry.id}>
+                  <div className="admin-message-meta">
+                    <strong>{entry.name}</strong>
+                    <time dateTime={entry.createdAt}>{formatDate(entry.createdAt)}</time>
+                  </div>
+                  {(entry.city || entry.state) && <small>{[entry.city, entry.state].filter(Boolean).join(', ')}</small>}
+                  <p>{entry.message}</p>
+                  <div className="admin-tags">
+                    <span>{Number(entry.likes || 0)} likes</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   useEffect(() => {
     runLegacyInteractions();
@@ -1039,6 +1154,7 @@ export default function App() {
       <div dangerouslySetInnerHTML={{ __html: beforeGuestbook }} />
       <FanExperience />
       <TributeWall />
+      <AdminFeedbackView />
       <div dangerouslySetInnerHTML={{ __html: `<!-- FOOTER -->${footerMarkup}` }} />
     </>
   );
