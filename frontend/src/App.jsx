@@ -670,6 +670,16 @@ function FanExperience() {
                   <span>{selectedFort.bestTime}</span>
                   <p>{selectedFort.travelTip}</p>
                 </div>
+                <div className="fort-route-summary">
+                  <div>
+                    <strong>How to reach</strong>
+                    <span>{selectedFort.howToReach}</span>
+                  </div>
+                  <div>
+                    <strong>Trek difficulty</strong>
+                    <span>{selectedFort.trekDifficulty}</span>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
