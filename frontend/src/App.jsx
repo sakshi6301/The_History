@@ -43,9 +43,41 @@ const pageMarkup = legacyMarkup
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Vijaydurg_fort.jpg/800px-Vijaydurg_fort.jpg',
     'assets/Screenshot 2026-05-05 235838.png',
   )
+  .replace(
+    '<div class="fort-year">Capital of Maratha Empire</div>',
+    '<div class="fort-year">Capital of Maratha Empire</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">Birthplace of Chhatrapati Shivaji — 1630</div>',
+    '<div class="fort-year">Birthplace of Chhatrapati Shivaji — 1630</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">Site of Afzal Khan\'s defeat — 1659</div>',
+    '<div class="fort-year">Site of Afzal Khan\'s defeat — 1659</div><div class="fort-visit-time">Best time: Sep to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">Sea Fort — Built 1664–67</div>',
+    '<div class="fort-year">Sea Fort — Built 1664–67</div><div class="fort-visit-time">Best time: Nov to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">First Conquest — 1645</div>',
+    '<div class="fort-year">First Conquest — 1645</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">Tanaji\'s Sacrifice — 1670</div>',
+    '<div class="fort-year">Tanaji\'s Sacrifice — 1670</div><div class="fort-visit-time">Best time: Jun to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">First Capital — 1648–70</div>',
+    '<div class="fort-year">First Capital — 1648–70</div><div class="fort-visit-time">Best time: Oct to Feb</div>',
+  )
+  .replace(
+    '<div class="fort-year">Naval Headquarters</div>',
+    '<div class="fort-year">Naval Headquarters</div><div class="fort-visit-time">Best time: Nov to Feb</div>',
+  )
   .replaceAll(
     '<a href="#guestbook">Guestbook</a>',
-    '<a href="#fan-experience">Fan Tools</a><a href="#festival-mode">Festival</a><a href="#book">Book</a><a href="#guestbook">Guestbook</a>',
+    '<a href="#fan-experience">Fan Tools</a><a href="#fort-visit-guide">Visit Guide</a><a href="#festival-mode">Festival</a><a href="#book">Book</a><a href="#guestbook">Guestbook</a>',
   );
 
 const [beforeGuestbook, afterGuestbook] = pageMarkup.split('<!-- GUESTBOOK -->');
@@ -82,6 +114,9 @@ const forts = [
     mapX: 41,
     mapY: 58,
     importance: 'Capital of the Maratha Empire and the site of Chhatrapati Shivaji Maharaj\'s coronation in 1674.',
+    bestTime: 'October to March',
+    travelTip: 'Cooler weather is better for the climb, ropeway ride and exploring the plateau comfortably.',
+    specialVisits: ['Coronation throne area', 'Jagdishwar Temple', 'Hirakani Buruj', 'Raigad Ropeway views'],
   },
   {
     name: 'Shivneri Fort',
@@ -90,6 +125,9 @@ const forts = [
     mapX: 45,
     mapY: 30,
     importance: 'Birthplace of Chhatrapati Shivaji Maharaj, where Jijabai shaped his early values and vision.',
+    bestTime: 'October to February',
+    travelTip: 'Winter mornings are pleasant for the trek, caves and birthplace visit.',
+    specialVisits: ['Birthplace memorial', 'Shivai Devi Temple', 'Seven gates route', 'Water tanks and caves'],
   },
   {
     name: 'Pratapgad Fort',
@@ -98,6 +136,9 @@ const forts = [
     mapX: 38,
     mapY: 65,
     importance: 'Known for the 1659 encounter with Afzal Khan and the decisive Maratha victory that followed.',
+    bestTime: 'September to February',
+    travelTip: 'Post-monsoon greenery and winter weather make the Mahabaleshwar route scenic.',
+    specialVisits: ['Afzal Khan encounter site', 'Bhavani Temple', 'Upper fort viewpoint', 'Mahabaleshwar valley views'],
   },
   {
     name: 'Torna Fort',
@@ -106,6 +147,31 @@ const forts = [
     mapX: 43,
     mapY: 49,
     importance: 'One of the first forts captured by Shivaji Maharaj as a young leader, marking the rise of Swarajya.',
+    bestTime: 'October to February',
+    travelTip: 'The trek is long, so start early and avoid heavy monsoon days.',
+    specialVisits: ['Zunjar Machi', 'Budhla Machi', 'Menghai Devi Temple', 'Sahyadri ridge views'],
+  },
+  {
+    name: 'Sinhagad Fort',
+    region: 'Pune',
+    image: 'assets/Sinhgad.png',
+    mapX: 45,
+    mapY: 53,
+    importance: 'Remembered for Tanaji Malusare\'s sacrifice and the 1670 battle that restored the fort to Swarajya.',
+    bestTime: 'June to February',
+    travelTip: 'Monsoon is lush and dramatic, while winter is easier for family visits.',
+    specialVisits: ['Tanaji Malusare memorial', 'Kalyan Darwaza', 'Pune valley views', 'Pithla-bhakri food stalls'],
+  },
+  {
+    name: 'Rajgad Fort',
+    region: 'Pune',
+    image: 'assets/Rajgad.png',
+    mapX: 42,
+    mapY: 56,
+    importance: 'An early capital of Swarajya and one of the most important hill forts in Shivaji Maharaj\'s life.',
+    bestTime: 'October to February',
+    travelTip: 'Plan a full day because the fort is large and the trek takes time.',
+    specialVisits: ['Padmavati Machi', 'Sanjivani Machi', 'Suvela Machi', 'Balekilla climb'],
   },
   {
     name: 'Sindhudurg Fort',
@@ -114,6 +180,9 @@ const forts = [
     mapX: 30,
     mapY: 84,
     importance: 'A major sea fort showing the naval vision and coastal defense strategy of the Maratha state.',
+    bestTime: 'October to March',
+    travelTip: 'Dry winter weather is best for boat access and coastal sightseeing.',
+    specialVisits: ['Arabian Sea ramparts', 'Shivaji Maharaj temple', 'Malvan boat ride', 'Snorkeling and scuba nearby'],
   },
   {
     name: 'Vijaydurg Fort',
@@ -122,6 +191,9 @@ const forts = [
     mapX: 31,
     mapY: 78,
     importance: 'A strategic naval stronghold on the western coast, linked with Maratha maritime power.',
+    bestTime: 'November to February',
+    travelTip: 'Visit in the dry season for clearer sea views and easier coastal travel.',
+    specialVisits: ['Sea-facing bastions', 'Historic dock area', 'Creek views', 'Coastal sunset points'],
   },
 ];
 
@@ -225,6 +297,17 @@ const bookChapters = [
     body: 'Close your book with lessons for modern readers: courage, governance, respect, strategy, self-rule, cultural pride and public duty.',
   },
 ];
+
+const bookDetails = {
+  title: 'My Book on Chhatrapati Shivaji Maharaj',
+  author: 'Sneha Hudge',
+  description: 'Read the online chapter version, download the complete manuscript, and share feedback about any chapter, correction, idea or emotion the book brings up.',
+  coverImage: 'assets/birth.png',
+  downloadUrl: 'books/chhatrapati-shivaji-maharaj-book.txt',
+  fileLabel: 'Complete Book',
+};
+
+const feedbackTypes = ['General feedback', 'Correction', 'Chapter suggestion', 'Appreciation', 'Publishing idea'];
 
 const posterDownloads = [
   {
@@ -366,6 +449,16 @@ function FanExperience() {
   const [bookSearch, setBookSearch] = useState('');
   const [fontScale, setFontScale] = useState(1);
   const [bookmarkedChapter, setBookmarkedChapter] = useState(() => Number(localStorage.getItem('shivaji-bookmark') || 0));
+  const [bookFeedback, setBookFeedback] = useState([]);
+  const [bookFeedbackStatus, setBookFeedbackStatus] = useState('');
+  const [bookFeedbackForm, setBookFeedbackForm] = useState({
+    name: '',
+    email: '',
+    feedbackType: feedbackTypes[0],
+    chapter: bookChapters[0].title,
+    rating: '5',
+    message: '',
+  });
   const [countdown, setCountdown] = useState(() => getCountdownParts(getNextShivJayanti()));
   const [copiedText, setCopiedText] = useState('');
 
@@ -392,6 +485,13 @@ function FanExperience() {
   useEffect(() => {
     localStorage.setItem('shivaji-bookmark', String(bookmarkedChapter));
   }, [bookmarkedChapter]);
+
+  useEffect(() => {
+    fetch('/api/book-feedback')
+      .then((response) => response.json())
+      .then(setBookFeedback)
+      .catch(() => setBookFeedbackStatus('Book feedback API is unavailable.'));
+  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -439,6 +539,39 @@ function FanExperience() {
     await navigator.clipboard.writeText(text);
     setCopiedText(text);
     window.setTimeout(() => setCopiedText(''), 1600);
+  }
+
+  function updateBookFeedbackField(event) {
+    setBookFeedbackForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+  }
+
+  async function submitBookFeedback(event) {
+    event.preventDefault();
+    setBookFeedbackStatus('Saving feedback...');
+
+    const response = await fetch('/api/book-feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(bookFeedbackForm),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      setBookFeedbackStatus(error.error || 'Could not save feedback.');
+      return;
+    }
+
+    const savedFeedback = await response.json();
+    setBookFeedback((current) => [savedFeedback, ...current].slice(0, 20));
+    setBookFeedbackForm({
+      name: '',
+      email: '',
+      feedbackType: feedbackTypes[0],
+      chapter: bookChapters[activeChapter].title,
+      rating: '5',
+      message: '',
+    });
+    setBookFeedbackStatus('Thank you. Your book feedback was received.');
   }
 
   const question = levelQuestions[activeQuestion];
@@ -548,8 +681,46 @@ function FanExperience() {
                 <span className="tool-kicker">{selectedFort.region}</span>
                 <h3>{selectedFort.name}</h3>
                 <p>{selectedFort.importance}</p>
+                <div className="fort-visit-box">
+                  <strong>Best time to visit</strong>
+                  <span>{selectedFort.bestTime}</span>
+                  <p>{selectedFort.travelTip}</p>
+                </div>
               </div>
             </article>
+          </div>
+        </div>
+
+        <div id="fort-visit-guide" className="fort-visit-guide">
+          <div className="section-header compact-header">
+            <span className="section-label">Travel Guide</span>
+            <h2 className="section-title">Best Time & Special Places</h2>
+            <div className="section-divider"></div>
+            <p className="section-desc">
+              Plan each fort visit with the right season, useful travel note and the most special places to see there.
+            </p>
+          </div>
+          <div className="fort-visit-grid">
+            {forts.map((fort) => (
+              <article className="fort-visit-card" key={fort.name}>
+                <img src={fort.image} alt={fort.name} />
+                <div className="fort-visit-content">
+                  <span className="tool-kicker">{fort.region}</span>
+                  <h3>{fort.name}</h3>
+                  <div className="visit-time-box">
+                    <strong>Best time to visit</strong>
+                    <span>{fort.bestTime}</span>
+                  </div>
+                  <p>{fort.travelTip}</p>
+                  <h4>What is special to visit</h4>
+                  <ul>
+                    {fort.specialVisits.map((place) => (
+                      <li key={place}>{place}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
@@ -635,11 +806,22 @@ function FanExperience() {
         <div id="book" className="book-reader">
           <div className="section-header compact-header">
             <span className="section-label">Your Book</span>
-            <h2 className="section-title">History Book Chapters</h2>
+            <h2 className="section-title">{bookDetails.title}</h2>
             <div className="section-divider"></div>
             <p className="section-desc">
-              A chapter-based reader for your own book, from ancestors and birth to death and legacy.
+              {bookDetails.description}
             </p>
+          </div>
+          <div className="book-download-panel">
+            <img src={bookDetails.coverImage} alt={`${bookDetails.title} cover`} />
+            <div>
+              <span className="tool-kicker">By {bookDetails.author}</span>
+              <h3>{bookDetails.fileLabel}</h3>
+              <p>Visitors can keep a copy for offline reading, then return here to send chapter-wise feedback.</p>
+            </div>
+            <a href={bookDetails.downloadUrl} download>
+              Download Book
+            </a>
           </div>
           <div className="book-toolbar">
             <label>
@@ -700,9 +882,51 @@ function FanExperience() {
                 </button>
               </div>
               <div className="chapter-note">
-                Send me your final book text or document, and I will replace this draft chapter text with your exact content.
+                This reader is ready for your final manuscript text, with progress, search, bookmark and chapter navigation already built in.
               </div>
             </article>
+          </div>
+          <div className="book-feedback-section">
+            <form className="book-feedback-form" onSubmit={submitBookFeedback}>
+              <div>
+                <span className="tool-kicker">Reader Feedback</span>
+                <h3>Share feedback about the book</h3>
+              </div>
+              <div className="book-feedback-fields">
+                <input name="name" value={bookFeedbackForm.name} onChange={updateBookFeedbackField} maxLength="60" placeholder="Your name" required />
+                <input name="email" value={bookFeedbackForm.email} onChange={updateBookFeedbackField} maxLength="90" type="email" placeholder="Email (optional)" />
+                <select name="feedbackType" value={bookFeedbackForm.feedbackType} onChange={updateBookFeedbackField}>
+                  {feedbackTypes.map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+                <select name="chapter" value={bookFeedbackForm.chapter} onChange={updateBookFeedbackField}>
+                  {bookChapters.map((item, index) => (
+                    <option key={item.title} value={item.title}>Chapter {index + 1}: {item.title}</option>
+                  ))}
+                </select>
+                <label>
+                  Rating
+                  <input name="rating" value={bookFeedbackForm.rating} onChange={updateBookFeedbackField} min="1" max="5" type="number" />
+                </label>
+                <textarea name="message" value={bookFeedbackForm.message} onChange={updateBookFeedbackField} maxLength="700" placeholder="Write feedback, correction, chapter idea or publishing suggestion" required />
+              </div>
+              <button type="submit">Send Feedback</button>
+              <p>{bookFeedbackStatus}</p>
+            </form>
+
+            <div className="book-feedback-list">
+              {bookFeedback.slice(0, 4).map((entry) => (
+                <article className="book-feedback-card" key={entry.id}>
+                  <div>
+                    <strong>{entry.name}</strong>
+                    <span>{entry.feedbackType} - {entry.rating}/5</span>
+                  </div>
+                  <small>{entry.chapter}</small>
+                  <p>{entry.message}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>

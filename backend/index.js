@@ -9,6 +9,7 @@ const FRONTEND_DIR = path.join(ROOT, 'frontend', 'dist');
 const FALLBACK_FRONTEND_DIR = path.join(ROOT, 'frontend');
 const DATA_DIR = path.join(__dirname, 'data');
 const GUESTBOOK_FILE = path.join(DATA_DIR, 'guestbook.json');
+const BOOK_FEEDBACK_FILE = path.join(DATA_DIR, 'book-feedback.json');
 
 const siteInfo = {
   title: 'Chhatrapati Shivaji Maharaj',
@@ -32,6 +33,10 @@ const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.pdf': 'application/pdf',
+  '.epub': 'application/epub+zip',
+  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -65,19 +70,35 @@ async function readBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
-async function readGuestbook() {
+async function readJsonFile(filePath, fallback = []) {
   try {
-    const file = await fs.readFile(GUESTBOOK_FILE, 'utf8');
+    const file = await fs.readFile(filePath, 'utf8');
     return JSON.parse(file);
   } catch (error) {
-    if (error.code === 'ENOENT') return [];
+    if (error.code === 'ENOENT') return fallback;
     throw error;
   }
 }
 
-async function writeGuestbook(entries) {
+async function writeJsonFile(filePath, data) {
   await fs.mkdir(DATA_DIR, { recursive: true });
-  await fs.writeFile(GUESTBOOK_FILE, JSON.stringify(entries, null, 2));
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+}
+
+async function readGuestbook() {
+  return readJsonFile(GUESTBOOK_FILE);
+}
+
+async function writeGuestbook(entries) {
+  await writeJsonFile(GUESTBOOK_FILE, entries);
+}
+
+async function readBookFeedback() {
+  return readJsonFile(BOOK_FEEDBACK_FILE);
+}
+
+async function writeBookFeedback(entries) {
+  await writeJsonFile(BOOK_FEEDBACK_FILE, entries);
 }
 
 function sanitizeText(value, maxLength) {
@@ -96,6 +117,12 @@ async function handleApi(req, res, url) {
   if (url.pathname === '/api/guestbook' && req.method === 'GET') {
     const entries = await readGuestbook();
     sendJson(res, 200, entries.filter((entry) => entry.status !== 'hidden').slice(0, 50));
+    return;
+  }
+
+  if (url.pathname === '/api/book-feedback' && req.method === 'GET') {
+    const entries = await readBookFeedback();
+    sendJson(res, 200, entries.filter((entry) => entry.status !== 'hidden').slice(0, 20));
     return;
   }
 
@@ -148,6 +175,46 @@ async function handleApi(req, res, url) {
 
     entries.unshift(entry);
     await writeGuestbook(entries.slice(0, 100));
+    sendJson(res, 201, entry);
+    return;
+  }
+
+  if (url.pathname === '/api/book-feedback' && req.method === 'POST') {
+    let body;
+    try {
+      body = await readBody(req);
+    } catch {
+      sendError(res, 400, 'Please send valid JSON.');
+      return;
+    }
+
+    const name = sanitizeText(body.name, 60);
+    const email = sanitizeText(body.email, 90);
+    const feedbackType = sanitizeText(body.feedbackType, 40) || 'General feedback';
+    const chapter = sanitizeText(body.chapter, 80);
+    const message = sanitizeText(body.message, 700);
+    const rating = Math.min(5, Math.max(1, Number(body.rating || 5)));
+
+    if (!name || !message) {
+      sendError(res, 400, 'Name and feedback message are required.');
+      return;
+    }
+
+    const entries = await readBookFeedback();
+    const entry = {
+      id: randomUUID(),
+      name,
+      email,
+      feedbackType,
+      chapter,
+      message,
+      rating,
+      status: 'visible',
+      createdAt: new Date().toISOString()
+    };
+
+    entries.unshift(entry);
+    await writeBookFeedback(entries.slice(0, 200));
     sendJson(res, 201, entry);
     return;
   }

@@ -608,6 +608,19 @@
     font-size: 0.7rem; letter-spacing: 2px; color: var(--saffron);
   }
 
+  .fort-visit-time {
+    width: fit-content;
+    margin-top: 8px;
+    padding: 6px 9px;
+    background: rgba(13,5,0,0.62);
+    border: 1px solid rgba(245,200,66,0.3);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
   /* CORONATION */
   #coronation {
     background: linear-gradient(180deg, var(--dark) 0%, #200A00 50%, var(--dark) 100%);
@@ -1097,6 +1110,51 @@
     align-items: stretch;
   }
 
+  .book-download-panel {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    gap: 22px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 22px;
+    background: linear-gradient(135deg, rgba(255,107,0,0.12), rgba(13,5,0,0.72));
+    border: 1px solid rgba(212,160,23,0.22);
+  }
+
+  .book-download-panel img {
+    width: 130px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid rgba(245,200,66,0.24);
+  }
+
+  .book-download-panel h3 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .book-download-panel p {
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .book-download-panel a {
+    display: inline-block;
+    color: var(--dark);
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    padding: 13px 18px;
+    text-transform: uppercase;
+    cursor: none;
+    white-space: nowrap;
+  }
+
   .fort-list,
   .chapter-tabs {
     display: grid;
@@ -1107,6 +1165,107 @@
   .download-hub {
     background: linear-gradient(135deg, rgba(13,5,0,0.92), rgba(42,16,0,0.66));
     border: 1px solid rgba(212,160,23,0.2);
+  }
+
+  .fort-visit-guide {
+    margin-top: 42px;
+    padding: 38px;
+    position: relative;
+    z-index: 1;
+    background:
+      linear-gradient(135deg, rgba(13,5,0,0.94), rgba(61,0,8,0.36));
+    border: 1px solid rgba(212,160,23,0.2);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.26);
+  }
+
+  .fort-visit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .fort-visit-card {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    min-height: 280px;
+    background: rgba(13,5,0,0.72);
+    border: 1px solid rgba(212,160,23,0.2);
+    overflow: hidden;
+  }
+
+  .fort-visit-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    filter: sepia(16%) contrast(1.06);
+  }
+
+  .fort-visit-content {
+    padding: 22px;
+  }
+
+  .fort-visit-content h3 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .visit-time-box {
+    display: grid;
+    gap: 5px;
+    padding: 13px 15px;
+    margin-bottom: 14px;
+    background: rgba(255,107,0,0.1);
+    border-left: 3px solid var(--saffron);
+  }
+
+  .visit-time-box strong,
+  .fort-visit-content h4 {
+    color: var(--saffron);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .visit-time-box span {
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+  }
+
+  .fort-visit-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .fort-visit-content ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    list-style: none;
+    margin-top: 11px;
+  }
+
+  .fort-visit-content li {
+    color: var(--cream);
+    line-height: 1.35;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .fort-visit-content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
   }
 
   .festival-mode {
@@ -1360,7 +1519,8 @@
   }
 
   .book-toolbar button,
-  .chapter-controls button {
+  .chapter-controls button,
+  .book-feedback-form button {
     border: 1px solid rgba(212,160,23,0.28);
     background: rgba(255,107,0,0.1);
     color: var(--gold-light);
@@ -1436,6 +1596,39 @@
     color: var(--text-muted);
     line-height: 1.75;
     font-size: 1.1rem;
+  }
+
+  .fort-visit-box {
+    margin-top: 22px;
+    padding: 18px 20px;
+    background: rgba(255,107,0,0.08);
+    border-left: 3px solid var(--saffron);
+  }
+
+  .fort-visit-box strong,
+  .fort-visit-box span {
+    display: block;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .fort-visit-box strong {
+    color: var(--saffron);
+    font-size: 0.68rem;
+    margin-bottom: 6px;
+  }
+
+  .fort-visit-box span {
+    color: var(--gold-light);
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+
+  .fort-visit-box p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .chapter-tabs {
@@ -1516,6 +1709,109 @@
   .chapter-controls button:disabled {
     opacity: 0.45;
     cursor: not-allowed;
+  }
+
+  .book-feedback-section {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.95fr) 1.05fr;
+    gap: 24px;
+    margin-top: 30px;
+  }
+
+  .book-feedback-form,
+  .book-feedback-card {
+    background: linear-gradient(135deg, rgba(13,5,0,0.88), rgba(42,16,0,0.68));
+    border: 1px solid rgba(212,160,23,0.2);
+  }
+
+  .book-feedback-form {
+    display: grid;
+    gap: 16px;
+    padding: 26px;
+  }
+
+  .book-feedback-form h3 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+  }
+
+  .book-feedback-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .book-feedback-fields input,
+  .book-feedback-fields select,
+  .book-feedback-fields textarea {
+    width: 100%;
+    background: rgba(13,5,0,0.78);
+    border: 1px solid rgba(212,160,23,0.22);
+    color: var(--cream);
+    padding: 12px 14px;
+    font: 1rem 'Crimson Text', serif;
+  }
+
+  .book-feedback-fields label {
+    color: var(--text-muted);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .book-feedback-fields label input {
+    margin-top: 8px;
+  }
+
+  .book-feedback-fields textarea {
+    grid-column: 1 / -1;
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .book-feedback-form button {
+    width: fit-content;
+  }
+
+  .book-feedback-form p {
+    min-height: 22px;
+    color: var(--text-muted);
+  }
+
+  .book-feedback-list {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .book-feedback-card {
+    padding: 20px;
+  }
+
+  .book-feedback-card div {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .book-feedback-card strong {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+  }
+
+  .book-feedback-card span,
+  .book-feedback-card small {
+    color: rgba(196,168,130,0.74);
+  }
+
+  .book-feedback-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 12px;
   }
 
   .tribute-wall {
@@ -1814,6 +2110,8 @@
     .fan-tools-grid,
     .fort-explorer-layout,
     .book-layout,
+    .book-download-panel,
+    .book-feedback-section,
     .fort-detail,
     .book-toolbar,
     .festival-layout,
@@ -1834,6 +2132,7 @@
     .map-pin span { display: none; }
     .chapter-controls { flex-direction: column; align-items: stretch; }
     .tribute-location-fields { grid-template-columns: 1fr; }
+    .book-download-panel img { width: 100%; max-height: 260px; }
   }
 
   @media (max-width: 560px) {
@@ -1861,6 +2160,8 @@
     .festival-card-actions button { width: 100%; }
     .chapter-tabs { max-height: 360px; }
     .map-shape { height: 280px; }
+    .book-feedback-fields { grid-template-columns: 1fr; }
+    .book-download-panel a { width: 100%; text-align: center; }
   }
 
   /* GLOW TEXT */
